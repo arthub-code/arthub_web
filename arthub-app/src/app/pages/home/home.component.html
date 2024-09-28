@@ -1,0 +1,32 @@
+<div class="container-home">
+    <img class="image-banner" src="../../../assets/background.png" alt="">
+    <div class="container-content-home">
+        <div class="container-artistico">
+            <div class="ola-perfil">
+                <img src="../../../assets/perfil.jpg" alt="perfil">
+                <p>Olá, {{socialName}}!</p>
+                <button class="button">Perfil Atístico</button>
+            </div>
+            <div class="videos-apresentacao">
+    
+            </div>
+        </div>
+        <div class="acesso-facil">
+            <h2>Acesso Rápido</h2>
+            <div class="painel">
+                <a *ngFor="let card of cards" [href]="card.link" class="cards" style="background-image: url({{card.img}});">
+                    <h3>{{ card.text }}</h3>
+                </a>
+            </div>
+        </div>
+        <div class="artes-andamento">
+            <h2>Artes em andamento</h2>
+            <div class="container-img-nenhuma-arte">
+                <img src="../../../assets/nenhuma-arte.png" alt="">
+                <b>Você não tem nenhuma arte!</b>
+                <button class="button averia-libre-bold">Criar Arte</button>
+            </div>
+        </div>
+    </div>
+</div>
+
