@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ContentArtesAndamentoComponent } from '../../components/home-componente/content-artes-andamento/content-artes-andamento.component';
+import { ContentAcessoFacilComponent } from '../../components/home-componente/content-acesso-facil/content-acesso-facil.component';
+import { ContentPerfilHomeComponent } from '../../components/home-componente/content-perfil-home/content-perfil-home.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+      CommonModule, 
+      ContentAcessoFacilComponent,
+      ContentArtesAndamentoComponent,
+      ContentPerfilHomeComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  socialName: string = "Rennan"; 
-  cards = [
-    { link: 'https://example.com/page1', img: '../../../assets/image1.png', text: 'Comissões' },
-    { link: 'https://example.com/page2', img: '../../../assets/image1.png', text: 'Artes' },
-    { link: 'https://example.com/page3', img: '../../../assets/image1.png', text: 'Perfil' },
-    { link: 'https://example.com/page3', img: '../../../assets/image1.png', text: 'Cursos' },
-    { link: 'https://example.com/page3', img: '../../../assets/image1.png', text: 'Suporte' },
-    { link: 'https://example.com/page3', img: '../../../assets/image1.png', text: 'Comunidade' }
-  ];
+
 }

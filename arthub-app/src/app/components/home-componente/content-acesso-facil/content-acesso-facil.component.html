@@ -1,0 +1,8 @@
+<div class="acesso-facil">
+    <h2>Acesso Rápido</h2>
+    <div class="painel">
+        <a *ngFor="let card of cards" [href]="card.link" class="cards" style="background-image: url({{card.img}});">
+            <h3>{{ card.text }}</h3>
+        </a>
+    </div>
+</div>
