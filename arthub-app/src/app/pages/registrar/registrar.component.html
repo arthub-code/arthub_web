@@ -14,8 +14,8 @@
             <div [ngStyle]="{'display': classStepOne}" class="step-one">
                 <select id="options" name="options" [(ngModel)]="accountCreatePerson.userAccountType" required>
                     <option disabled selected>O que é você?</option>
-                    <option value="valor1">Artista</option>
-                    <option value="valor2">Consumidor da arte</option>
+                    <option value="Artist">Artista</option>
+                    <option value="Buyer">Consumidor da arte</option>
                 </select>
                 <div class="container-division-content-registro">
                     <div class="input">
@@ -27,12 +27,12 @@
                         <input type="text" placeholder="Digite seu sobre..." [(ngModel)]="sobrenome">
                     </div>
                 </div>
-                
+
                 <div class="input">
-                    Nome Social
+                    Como deseja ser chamado?
                     <input type="text" placeholder="Digite seu apelido..." [(ngModel)]="accountCreatePerson.socialName">
                 </div>
-                <div class="container-division-content-registro">                
+                <div class="container-division-content-registro">
                     <div class="input">
                         Data de nascimento
                         <input type="date" [(ngModel)]="accountCreatePerson.dateOfBirth">
