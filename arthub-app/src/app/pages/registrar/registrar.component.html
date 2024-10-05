@@ -1,0 +1,66 @@
+<div class="container-registro">
+    <div class="container-content-total-registro">
+        <div class="logo">
+            <img src="../../../assets/logo.png" alt="">
+            Arthub
+        </div>
+        <div class="container-text-registro">
+            <p>Seja bem-vindo á arthub</p>
+            <h1>Criar nova conta</h1>
+            <p>Já tenho uma conta? <a href="home">Login</a></p>
+        </div>
+        <div class="container-content-registro">
+            <span>Etapa {{etapa}}</span>
+            <div [ngStyle]="{'display': classStepOne}" class="step-one">
+                <select id="options" name="options" [(ngModel)]="accountCreatePerson.userAccountType" required>
+                    <option disabled selected>O que é você?</option>
+                    <option value="valor1">Artista</option>
+                    <option value="valor2">Consumidor da arte</option>
+                </select>
+                <div class="container-division-content-registro">
+                    <div class="input">
+                        Nome
+                        <input type="text" placeholder="Digite seu nome..." [(ngModel)]="nome">
+                    </div>
+                    <div class="input">
+                        Sobrenome
+                        <input type="text" placeholder="Digite seu sobre..." [(ngModel)]="sobrenome">
+                    </div>
+                </div>
+                
+                <div class="input">
+                    Nome Social
+                    <input type="text" placeholder="Digite seu apelido..." [(ngModel)]="accountCreatePerson.socialName">
+                </div>
+                <div class="container-division-content-registro">                
+                    <div class="input">
+                        Data de nascimento
+                        <input type="date" [(ngModel)]="accountCreatePerson.dateOfBirth">
+                    </div>
+                    <button (click)="NextOrBackStage()"><b>Proximo</b></button>
+                </div>
+            </div>
+            <div [ngStyle]="{'display': classStepTwo}" class="step-two">
+                <div class="input">
+                    Nome de usuário
+                    <input type="text" placeholder="Digite seu nome..." [(ngModel)]="accountCreatePerson.username">
+                </div>
+                <div class="input">
+                    Email
+                    <input type="text" placeholder="Digite seu nome..." [(ngModel)]="accountCreatePerson.email">
+                </div>
+                <div class="container-division-content-registro">
+                    <div class="input">
+                        Senha
+                        <input type="password" placeholder="Digite seu nome..." [(ngModel)]="accountCreatePerson.password">
+                    </div>
+                    <div class="input">
+                        Confirmar Senha
+                        <input type="password" placeholder="Digite seu nome..." [(ngModel)]="confirmarSenha">
+                    </div>
+                </div>
+                <a href="registro">voltar</a>
+                <button class="button" (click)="PostRegisterAccount()"><b>Enviar</b></button>
+            </div>
+    </div>
+</div>

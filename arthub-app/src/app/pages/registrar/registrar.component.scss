@@ -1,0 +1,93 @@
+@import '../../../styles.scss';
+
+.container-registro{
+    background-image: url("../../../assets/background-registro.png");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    gap: 25px;
+    
+    .container-content-total-registro{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px;
+
+        .step-one{
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .step-two{
+            flex-direction: column;
+            gap: 25px;
+
+            .button{
+                width: 100%;
+                padding: 15px 0px;
+            }
+        }
+
+        .container-text-registro{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container-content-registro{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 350px;
+
+            select{
+                padding: 10px;
+                font-size: 16px;
+                color: $border-color;
+                background-color: transparent;
+                border: 2px $border-color solid;
+            }
+
+            option{
+                background-color: black
+            }
+
+            .container-division-content-registro{
+                display: flex;
+                gap: 10px;
+                width: 100%;
+
+                input{
+                    width: 100%;
+                }
+            }
+    
+            .input{
+                display: flex;
+                flex-direction: column;
+                border: 2px $border-color solid;
+                padding: 5px;
+                color: $border-color;
+    
+                input{
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: $border-color;
+                }
+            }
+
+            button{
+                padding: 0;
+                width: 52.2%;
+            }
+        }
+    
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 20px;
+        }
+    }
+}
