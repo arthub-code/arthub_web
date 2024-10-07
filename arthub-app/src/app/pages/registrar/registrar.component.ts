@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registrar',
@@ -13,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
     HttpClientModule
   ],
   templateUrl: './registrar.component.html',
-  styleUrls: ['./registrar.component.scss'] // misterbv: Boas práticas do angular, estilos em array, porque podem ter vários estilos;
+  styleUrls: ['./registrar.component.scss'] 
 })
 export class RegistrarComponent {
   accountCreatePerson: RegisterAccount = new RegisterAccount();
@@ -24,7 +25,11 @@ export class RegistrarComponent {
   nome!: string;
   sobrenome!: string;
 
-  constructor(private cliente: HttpClient) {} // mistervb: Aqui o HttpClient pode ser injetado diretamente
+  constructor(private cliente: HttpClient) {}
+
+  ngOnInit() {
+    this.accountCreatePerson.userAccountType = '';
+  }
 
   public PostRegisterAccount() {
     this.accountCreatePerson.fullName = this.nome + ' ' + this.sobrenome;
@@ -41,8 +46,21 @@ export class RegistrarComponent {
     );
   }
 
-  public NextOrBackStage() {
-    if (this.classStepOne === "flex") {
+  public ValidationProxStep(){
+    if(this.accountCreatePerson.userAccountType != "" && this.nome != null && this.sobrenome != null && this.accountCreatePerson.socialName != null && this.accountCreatePerson.dateOfBirth != null && this.accountCreatePerson.socialName != "" && this.nome != "" && this.sobrenome != "")
+      return true
+    else{
+      alert("Preencha todos os campos");
+      return false
+    }
+  }
+
+  public ValidationPassword(){
+
+  }
+
+  public NextOrBackStage(){
+    if (this.classStepOne === "flex" && this.ValidationProxStep()) {
       this.classStepTwo = "flex";
       this.classStepOne = "none";
       this.etapa = 2;

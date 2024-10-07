@@ -7,7 +7,6 @@
         <div class="container-text-login">
             <p>Bem-vindo de volta :3</p>
             <h1>Entre na conta</h1>
-            <p>Caso esquecer a senha <a href="home">CLIQUE AQUI</a></p>
         </div>
         <div class="container-content-login">
             <div class="input">
@@ -18,6 +17,7 @@
                 Senha
                 <input type="password" placeholder="Digite seu senha..." [(ngModel)]="accountLoginPerson.password">
             </div>
+            <a RouterLink="registro">Esqueci a senha</a>
         <button (click)="PostLoginAccount()"><b>Entrar</b></button>
     </div>
 </div>
