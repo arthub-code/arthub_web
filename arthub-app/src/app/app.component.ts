@@ -24,9 +24,9 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((val) => {
       if (this.router.url === '/login' || this.router.url === '/registro') {
-        this.showHeaderFooter = false;  
+        this.showHeaderFooter = false;
       } else {
-        this.showHeaderFooter = true;  
+        this.showHeaderFooter = true;
       }
     });
   }

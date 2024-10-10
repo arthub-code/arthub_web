@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import ApiResponse from '../../types/IApiResponse';
+import { TranslationService } from '../../services/translation/translation.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-registrar',
@@ -14,7 +17,7 @@ import { RouterLink } from '@angular/router';
     HttpClientModule
   ],
   templateUrl: './registrar.component.html',
-  styleUrls: ['./registrar.component.scss'] 
+  styleUrls: ['./registrar.component.scss']
 })
 export class RegistrarComponent {
   accountCreatePerson: RegisterAccount = new RegisterAccount();
@@ -25,7 +28,7 @@ export class RegistrarComponent {
   nome!: string;
   sobrenome!: string;
 
-  constructor(private cliente: HttpClient) {}
+  constructor(private cliente: HttpClient, private translationService: TranslationService) {}
 
   ngOnInit() {
     this.accountCreatePerson.userAccountType = '';
@@ -33,21 +36,38 @@ export class RegistrarComponent {
 
   public PostRegisterAccount() {
     this.accountCreatePerson.fullName = this.nome + ' ' + this.sobrenome;
-    this.cliente.post('http://localhost:8080/useraccount/v1/public/requestCreationUserAccount', this.accountCreatePerson)
-    .subscribe(
-      (response: any) => {
-        const successMessage = response ? JSON.stringify(response) : "Seu email foi cadastrado com sucesso";
-        alert(successMessage);
-      },
-      (error: any) => {
-        const errorMessage = error["error"] ? JSON.stringify(error) : "Ocorreu um erro durante o cadastro.";
-        alert(errorMessage);
-      }
-    );
+
+    this.cliente.post<ApiResponse>('http://localhost:8080/useraccount/v1/public/requestCreationUserAccount', this.accountCreatePerson)
+      .pipe(
+        map(async (response: ApiResponse) => {
+          if (response && response.data) {
+            return await this.translationService.translateText(response.data, 'pt');
+          }
+          return 'Sua conta foi requisitada com sucesso. Enviamos um email de confirmação, estamos no aguardo de sua resposta.';
+        })
+      )
+      .subscribe(
+        async (translatedMessage: Promise<string | undefined>) => {
+          const successMessage = await translatedMessage;
+          alert(successMessage);
+        },
+        async (error: any) => {
+          let errerResponse: ApiResponse = error?.error;
+          const errorMessage = await this.translationService.translateText(errerResponse.data) || 'Ocorreu um erro durante o cadastro. Por favor entre em contato com o suporte.';
+          alert(errorMessage);
+        }
+      );
   }
 
   public ValidationProxStep(){
-    if(this.accountCreatePerson.userAccountType != "" && this.nome != null && this.sobrenome != null && this.accountCreatePerson.socialName != null && this.accountCreatePerson.dateOfBirth != null && this.accountCreatePerson.socialName != "" && this.nome != "" && this.sobrenome != "")
+    if(this.accountCreatePerson.userAccountType != ""
+      && this.nome != null
+      && this.sobrenome != null
+      && this.accountCreatePerson.socialName != null
+      && this.accountCreatePerson.dateOfBirth != null
+      && this.accountCreatePerson.socialName != ""
+      && this.nome != ""
+      && this.sobrenome != "")
       return true
     else{
       alert("Preencha todos os campos");
