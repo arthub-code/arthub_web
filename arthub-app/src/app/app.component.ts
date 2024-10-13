@@ -23,7 +23,7 @@ export class AppComponent {
 
   constructor(private router: Router) {
     this.router.events.subscribe((val) => {
-      if (this.router.url === '/login' || this.router.url === '/registro') {
+      if (this.router.url === '/login' || this.router.url === '/registro' || this.router.url === '/email') {
         this.showHeaderFooter = false;
       } else {
         this.showHeaderFooter = true;

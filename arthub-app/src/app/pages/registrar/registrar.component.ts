@@ -27,6 +27,7 @@ export class RegistrarComponent {
   confirmarSenha!: string;
   nome!: string;
   sobrenome!: string;
+  displayModal: string = "closedModal"; 
 
   constructor(private cliente: HttpClient, private translationService: TranslationService) {}
 
@@ -37,26 +38,30 @@ export class RegistrarComponent {
   public PostRegisterAccount() {
     this.accountCreatePerson.fullName = this.nome + ' ' + this.sobrenome;
 
-    this.cliente.post<ApiResponse>('http://localhost:8080/useraccount/v1/public/requestCreationUserAccount', this.accountCreatePerson)
-      .pipe(
-        map(async (response: ApiResponse) => {
-          if (response && response.data) {
-            return await this.translationService.translateText(response.data, 'pt');
+    if(this.ValidationPassword(this.accountCreatePerson.password))
+      this.cliente.post<ApiResponse>('http://localhost:8080/useraccount/v1/public/requestCreationUserAccount', this.accountCreatePerson)
+        .pipe(
+          map(async (response: ApiResponse) => {
+            if (response && response.data) {
+              this.displayModal = "openModal";
+              return await this.translationService.translateText(response.data, 'pt');
+            }
+            return 'Sua conta foi requisitada com sucesso. Enviamos um email de confirmação, estamos no aguardo de sua resposta.';
+          })
+        )
+        .subscribe(
+          async (translatedMessage: Promise<string | undefined>) => {
+            const successMessage = await translatedMessage;
+            this.displayModal = "openModal"; 
+          },
+          async (error: any) => {
+            let errerResponse: ApiResponse = error?.error;
+            const errorMessage = await this.translationService.translateText(errerResponse.data) || 'Ocorreu um erro durante o cadastro. Por favor entre em contato com o suporte.';
+            alert(errorMessage);
           }
-          return 'Sua conta foi requisitada com sucesso. Enviamos um email de confirmação, estamos no aguardo de sua resposta.';
-        })
-      )
-      .subscribe(
-        async (translatedMessage: Promise<string | undefined>) => {
-          const successMessage = await translatedMessage;
-          alert(successMessage);
-        },
-        async (error: any) => {
-          let errerResponse: ApiResponse = error?.error;
-          const errorMessage = await this.translationService.translateText(errerResponse.data) || 'Ocorreu um erro durante o cadastro. Por favor entre em contato com o suporte.';
-          alert(errorMessage);
-        }
-      );
+        );
+      else
+        alert("As senhas não são iguais");
   }
 
   public ValidationProxStep(){
@@ -75,8 +80,12 @@ export class RegistrarComponent {
     }
   }
 
-  public ValidationPassword(){
-
+  public ValidationPassword(password: string): boolean{
+    if(password === this.confirmarSenha){
+      return true;
+    } else{
+      return false;
+    }
   }
 
   public NextOrBackStage(){
@@ -89,6 +98,11 @@ export class RegistrarComponent {
       this.classStepOne = "flex";
       this.etapa = 1;
     }
+  }
+
+  
+  hideModal() {
+    this.displayModal = "closedModal";
   }
 }
 

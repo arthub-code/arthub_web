@@ -1,42 +1,51 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
+import { Component, Inject, PLATFORM_ID, ɵunwrapSafeValue } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/atuhentication/auth.services';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     RouterOutlet,
-    HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   accountLoginPerson: LoginPayload = new LoginPayload();
-  client!: HttpClient;
+  isBrowser: boolean;
 
-  constructor(private http: HttpClient){
-    this.client = http;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId); 
   }
 
-  public PostLoginAccount(){
-    this.client.post('localhost:8080/useraccount/v1/public/login', this.accountLoginPerson).subscribe(
-      response => {
-        alert("Seu email foi cadastro com sucesso");
-      },
-      error => {
-        alert("Sua senha precisa ter mais caracteres");
-      }
-    );
+  public PostLoginAccount() {
+    if (this.isBrowser) {
+      this.authService.login(this.accountLoginPerson).subscribe(
+        (response: any) => {
+          if (response && response.data.token) {
+            this.authService.saveToken(response.data.token);
+            this.router.navigate(['']); 
+          } else {
+            alert("salve");
+          }
+        },
+        error => {
+          alert("Erro ao fazer login: " + error.message);
+        }
+      );
+    }
   }
 }
 
-class LoginPayload{
+class LoginPayload {
   email!: string;
   password!: string;
 }
