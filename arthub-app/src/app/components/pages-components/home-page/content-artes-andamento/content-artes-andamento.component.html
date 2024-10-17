@@ -3,6 +3,9 @@
     <div class="container-img-nenhuma-arte">
         <img src="../../../assets/nenhuma-arte.png" alt="">
         <b>Você não tem nenhuma arte!</b>
-        <button class="button averia-libre-bold">Criar Arte</button>
+        <ui-secondary-button [useModal]="true">
+          Criar Arte
+          <ng-template #modalContent><p>Ola artista!</p><p>Crie a sua arte</p></ng-template>
+        </ui-secondary-button>
     </div>
 </div>

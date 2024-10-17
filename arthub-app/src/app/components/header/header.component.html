@@ -4,10 +4,22 @@
         Arthub
     </div>
     <div class="buttons-indique-ham">
-        <button class="button">
-            <img src="../../../assets/dinehiro.svg" alt="ícone dinheiro" style="width:16px; height:16px;" />
-            <p>Indique e ganhe</p>
-          </button>
-        <i class="pi pi-align-right" style="font-size: 2rem;;"></i>
+      <ui-primary-button [useIcon]="true" [useModal]="true" [textStyle]="{'fontWeight': '700'}" iconAlign="left" iconSrc="../../../assets/dinehiro.svg">
+        Indique e ganhe
+        <ng-template #modalContent><header-indique-e-ganhe-modal></header-indique-e-ganhe-modal></ng-template>
+      </ui-primary-button>
+      <i (click)="toggleSidebar('right')" class="pi pi-align-right menu-btn" style="font-size: 2rem;"></i>
     </div>
 </div>
+<div class="container-bottom-header">
+  <div>
+    <i (click)="toggleSidebar('bottom')" class="pi pi-align-right menu-btn" style="font-size: 2rem;"></i>
+    <p>Inicio</p>
+  </div>
+
+</div>
+
+<p-sidebar [(visible)]="sidebarMenuVisible" [position]="sidebarPosition">
+  <header-sidebar-menu-content></header-sidebar-menu-content>
+</p-sidebar>
+

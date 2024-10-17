@@ -1,36 +1,65 @@
 @import '../../../styles.scss';
 
-.container-header{
+.container-bottom-header {
+  display: none;
+  @media screen and (max-width: $l-medium) {
     display: flex;
     align-items: center;
-    padding: 20px;
     justify-content: space-around;
     width: 100vw;
     background-color: $header-color;
-    border-bottom: 1px $border-color solid;
+    border-bottom: 1px $principal-color solid;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     z-index: 1000;
-
-    .logo{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 20px;
-
-        img{
-            height: 3rem;
-        }
-    }
-
-    .buttons-indique-ham{
-        display: flex;
-        align-items: center;
-        gap: 40px;
-
-        .pi .pi-align-right{
-            color: $border-color;
-        }
-    }
+  }
 }
+
+.container-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-around;
+  width: 100vw;
+  background-color: $header-color;
+  border-bottom: 1px $principal-color solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+
+    img {
+      height: 3rem;
+    }
+  }
+
+  .buttons-indique-ham {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .pi .pi-align-right {
+      color: $principal-color;
+    }
+  }
+
+  @media screen and (max-width: $l-medium) {
+    display: none;
+  }
+}
+
+.menu-btn {
+  cursor: pointer;
+  &:hover {
+    color: $principal-color-hover;
+  }
+}
+
+

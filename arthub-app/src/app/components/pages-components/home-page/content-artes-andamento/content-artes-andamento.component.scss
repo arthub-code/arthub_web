@@ -1,5 +1,4 @@
-@import '../../../../styles.scss';
-@import '../../../components/styles/fonts.scss';
+@import '../../../../../styles.scss';
 
 .artes-andamento{
     margin-top: 40px;
@@ -13,11 +12,11 @@
         justify-content: center;
 
         .button{
-            border: 2px $border-color solid;
+            border: 2px $principal-color solid;
             background-color: $secondary-color;
-            color: $border-color;
+            color: $principal-color;
             font-size: 16px;
-            padding: 10px 40px 10px 40px;   
+            padding: 10px 40px 10px 40px;
         }
     }
 }

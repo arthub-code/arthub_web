@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     gap: 25px;
-    
+
     .container-content-total-login{
         display: flex;
         flex-direction: column;
@@ -24,23 +24,23 @@
             flex-direction: column;
             gap: 20px;
             width: 290px;
-    
+
             .input{
                 display: flex;
                 flex-direction: column;
-                border: 2px $border-color solid;
+                border: 2px $principal-color solid;
                 padding: 5px;
-                color: $border-color;
-    
+                color: $principal-color;
+
                 input{
                     border: none;
                     outline: none;
                     background-color: transparent;
-                    color: $border-color;
+                    color: $principal-color;
                 }
             }
         }
-    
+
         .logo{
             display: flex;
             align-items: center;

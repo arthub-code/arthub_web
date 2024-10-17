@@ -1,30 +1,30 @@
 @import "primeicons/primeicons.css";
+@import "primeng/resources/primeng.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300;400;700&display=swap');
+
 
 $primary-color: #0E0A28;
 $secondary-color: #191B31;
-$border-color: #FFFEE8;
+$secondary-color-hover: #111325;
+$secondary-color-active: #0a0c1a;
+$principal-color: #FFFEE8;
+$principal-color-hover: #faf8c7;
+$principal-color-active: #fffca7;
 $header-color: #0E0A28CC;
+
+$l-medium: 1300px;
+$medium: 900px;
+$small: 400px;
 
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Averia Libre", system-ui;
 }
-
-button{
-    display: flex;
-    padding: 10px 20px 10px 20px;
-    font-size: 15px;
-    gap: 10px;
-    color: $primary-color;
-    background-color: $border-color;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-}
-
 
 .link{
-    color: $border-color;       
+    color: $principal-color;
 }
+
+html, body { height: 100%; background-color: $primary-color; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

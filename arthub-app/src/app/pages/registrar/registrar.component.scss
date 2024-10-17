@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     gap: 25px;
-    
+
     .container-content-total-registro{
         display: flex;
         flex-direction: column;
@@ -43,9 +43,9 @@
             select{
                 padding: 10px;
                 font-size: 16px;
-                color: $border-color;
+                color: $principal-color;
                 background-color: transparent;
-                border: 2px $border-color solid;
+                border: 2px $principal-color solid;
             }
 
             option{
@@ -61,19 +61,19 @@
                     width: 100%;
                 }
             }
-    
+
             .input{
                 display: flex;
                 flex-direction: column;
-                border: 2px $border-color solid;
+                border: 2px $principal-color solid;
                 padding: 5px;
-                color: $border-color;
-    
+                color: $principal-color;
+
                 input{
                     border: none;
                     outline: none;
                     background-color: transparent;
-                    color: $border-color;
+                    color: $principal-color;
                 }
             }
 
@@ -86,7 +86,7 @@
                 width: 52.2%;
             }
         }
-    
+
         .logo{
             display: flex;
             align-items: center;
