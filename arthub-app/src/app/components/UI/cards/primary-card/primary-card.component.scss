@@ -1,0 +1,20 @@
+@import '../../../../../styles.scss';
+
+:host {
+  .primary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color;
+    gap: 20px;
+    border: 1px $principal-color solid;
+    padding: 0 18px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  ::ng-deep .p-carousel .p-carousel-item {
+    text-align: center;
+  }
+}
