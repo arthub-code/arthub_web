@@ -1,9 +1,11 @@
-import { ContentChild, Directive, EventEmitter, HostListener, Input, Output, TemplateRef } from "@angular/core";
+import { ContentChild, Directive, EventEmitter, HostListener, input, Input, Output, TemplateRef } from "@angular/core";
 import UIComponent from "../UIComponent";
 
 @Directive()
 export default class UIButton extends UIComponent {
   @Input() useIcon: boolean = false;
+  @Input() titleModal: string = "Modal Header";
+  @Input() useSpinner: boolean = false;
   @Input() iconAlign: 'left' | 'right' = 'left';
   @Input() iconSrc: string = '';
   @Input() textStyle: { [key: string]: string } = {};

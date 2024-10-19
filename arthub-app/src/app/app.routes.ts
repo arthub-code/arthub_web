@@ -10,5 +10,5 @@ export const routes: Routes = [
     {path: 'registro', component: RegistrarComponent},
     {path: '', component: HomeComponent, canActivate: [AuthGuard]},
     {path: 'playground/test', component: TestPageComponent},
-    { path: '**', redirectTo: '' }
+    {path: '**', redirectTo: ''}
 ];

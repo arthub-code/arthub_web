@@ -3,7 +3,7 @@
   <span [ngStyle]="textStyle"><ng-content></ng-content></span>
   <img *ngIf="useIcon && iconAlign === 'right'" [src]="iconSrc" class="icon-right" alt="Ícone do botão à direita">
 </p-button>
-<p-dialog [(visible)]="showModal" [modal]="true" header="Modal Header" (onHide)="closeModal()">
+<p-dialog [(visible)]="showModal" [modal]="true" header="{{titleModal}}" (onHide)="closeModal()">
   <ng-template *ngIf="modalContent" [ngTemplateOutlet]="modalContent"></ng-template>
   <p-footer>
     <button pButton type="button" label="Fechar" (click)="closeModal()"></button>

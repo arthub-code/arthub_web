@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
 import ApiResponse from '../../types/IApiResponse';
 import { TranslationService } from '../../services/translation/translation.service';
 import { map } from 'rxjs';
+import { PrimaryButtonComponent } from '../../components/UI/buttons/primary-button/primary-button.component';
 
 @Component({
   selector: 'app-registrar',
@@ -14,7 +14,8 @@ import { map } from 'rxjs';
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PrimaryButtonComponent
   ],
   templateUrl: './registrar.component.html',
   styleUrls: ['./registrar.component.scss']

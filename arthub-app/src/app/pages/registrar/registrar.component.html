@@ -36,7 +36,7 @@
                         Data de nascimento
                         <input type="date" [(ngModel)]="accountCreatePerson.dateOfBirth">
                     </div>
-                    <button (click)="NextOrBackStage()"><b>Proximo</b></button>
+                    <ui-primary-button (click)="NextOrBackStage()" [style]="{'fontWeight': 'bold', 'height': '100%'}" width="100%">Proximo</ui-primary-button>
                 </div>
             </div>
             <div [ngStyle]="{'display': classStepTwo}" class="step-two">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <a (click)="NextOrBackStage()">voltar</a>
-                <button class="button" (click)="PostRegisterAccount()"><b>Enviar</b></button>
+                <ui-primary-button (click)="PostRegisterAccount()" [style]="{'fontWeight': 'bold'}">Enviar</ui-primary-button>
             </div>
     </div>
 </div>
