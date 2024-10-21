@@ -1,3 +1,32 @@
 {
-    "greeting": "Welcome to back :3"
+  "language": "English",
+  "global": {
+    "txt_email": "Email",
+    "txt_password": "Password"
+  },
+  "pages": {
+    "login": {
+      "title": "Login",
+      "txt_welcomeBack": "Welcome back :3",
+      "txt_loginToAccount": "Log in to your account",
+      "txt_login": "Log in",
+      "txt_createAccount": "Create account",
+      "txt_forgotPassword": "Forgot password",
+      "placeholder_emailInput": "Enter your email...",
+      "placeholder_passwordInput": "Enter your password..."
+    }
+  },
+  "messages": {
+    "error": {
+      "validation_fieldIsRequired": "This field is required.",
+      "validation_minLength": "Minimum length is %s",
+      "validation_maxLength": "Maximum length is %s"
+    },
+    "success": {
+
+    },
+    "warning": {
+
+    }
+  }
 }

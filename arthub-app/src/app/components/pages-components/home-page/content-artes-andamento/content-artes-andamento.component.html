@@ -6,33 +6,7 @@
         <ui-secondary-button titleModal="Adicione sua arte - Etapa 1" [useModal]="true">
           Criar Arte
           <ng-template #modalContent>
-            <hr>
-            <div class="container-content-modal">
-              <div class="input">
-                <b>Nome<i style="color: red;">*</i></b>
-                <input type="text">
-              </div>
-              <div class="container-division-content-form">
-                <div class="input">
-                  <b>Visibilidade<i style="color: red;">*</i></b>
-                  <select id="options" name="options" required>
-                    <option value="Public">Publico</option>
-                    <option value="Private">Privado</option>+
-                    <option value="Link">Só com link</option>
-                  </select>
-                </div>
-                <div class="container-switch">
-                  Data de prazo
-                  <div class="switch">
-                    <button></button>
-                  </div>
-                </div>
-              </div>
-              <div class="input">
-                <b>Qual é o prazo?<i style="color: red;">*</i></b>
-                <input type="date" name="" id="">
-              </div>
-            </div>
+            <content-artes-andamento-modal-registrar-arte></content-artes-andamento-modal-registrar-arte>
           </ng-template>
         </ui-secondary-button>
     </div>

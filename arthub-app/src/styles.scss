@@ -28,3 +28,27 @@ $small: 400px;
 
 html, body { height: 100%; background-color: $primary-color; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.primary-input{
+  display: flex;
+  flex-direction: column;
+  border: 2px $principal-color solid;
+  padding: 5px;
+  color: $principal-color;
+
+  input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $principal-color;
+  }
+  input.invalid {
+    border-color: red;
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}

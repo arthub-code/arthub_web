@@ -24,21 +24,6 @@
             flex-direction: column;
             gap: 20px;
             width: 290px;
-
-            .input{
-                display: flex;
-                flex-direction: column;
-                border: 2px $principal-color solid;
-                padding: 5px;
-                color: $principal-color;
-
-                input{
-                    border: none;
-                    outline: none;
-                    background-color: transparent;
-                    color: $principal-color;
-                }
-            }
         }
 
         .logo{

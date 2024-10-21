@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [
+
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
