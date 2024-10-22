@@ -1,0 +1,22 @@
+@import '../../../../../styles.scss';
+
+.artes-andamento{
+    margin-top: 40px;
+
+    .container-img-nenhuma-arte{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        .button{
+            border: 2px $principal-color solid;
+            background-color: $secondary-color;
+            color: $principal-color;
+            font-size: 16px;
+            padding: 10px 40px 10px 40px;
+        }
+    }
+}

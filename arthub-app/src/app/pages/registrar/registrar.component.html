@@ -1,0 +1,76 @@
+<div class="container-registro">
+    <div class="container-content-total-registro">
+        <div class="logo">
+            <img src="../../../assets/logo.png" alt="">
+            Arthub
+        </div>
+        <div class="container-text-registro">
+            <p>Seja bem-vindo á arthub</p>
+            <h1>Criar nova conta</h1>
+            <p>Já tenho uma conta? <a href="login">clique aqui</a></p>
+        </div>
+        <div class="container-content-registro">
+            <span>Etapa {{etapa}}</span>
+            <div [ngStyle]="{'display': classStepOne}" class="step-one">
+                <select id="options" name="options" [(ngModel)]="accountCreatePerson.userAccountType" required>
+                    <option value="" disabled selected>Selecione o tipo da conta</option>
+                    <option value="Artist">Artista</option>
+                    <option value="Buyer">Consumidor da arte</option>
+                </select>
+                <div class="container-division-content-registro">
+                    <div class="input">
+                        Nome
+                        <input type="text" placeholder="Digite seu nome..." [(ngModel)]="nome">
+                    </div>
+                    <div class="input">
+                        Sobrenome
+                        <input type="text" placeholder="Digite seu sobre..." [(ngModel)]="sobrenome">
+                    </div>
+                </div>
+                <div class="input">
+                    Como deseja ser chamado?
+                    <input type="text" placeholder="Digite seu apelido..." [(ngModel)]="accountCreatePerson.socialName">
+                </div>
+                <div class="container-division-content-registro">
+                    <div class="input">
+                        Data de nascimento
+                        <input type="date" [(ngModel)]="accountCreatePerson.dateOfBirth">
+                    </div>
+                    <ui-primary-button (click)="NextOrBackStage()" [style]="{'fontWeight': 'bold', 'height': '100%'}" width="100%">Proximo</ui-primary-button>
+                </div>
+            </div>
+            <div [ngStyle]="{'display': classStepTwo}" class="step-two">
+                <div class="input">
+                    Nome de usuário
+                    <div>
+                        <span>&#64;</span>
+                        <input type="text" placeholder="Username" [(ngModel)]="accountCreatePerson.username">
+                    </div>
+                </div>
+                <div class="input">
+                    Email
+                    <input type="text" placeholder="Digite seu email..." [(ngModel)]="accountCreatePerson.email">
+                </div>
+                <div class="container-division-content-registro">
+                    <div class="input">
+                        Senha
+                        <input type="password" placeholder="Digite sua senha..." [(ngModel)]="accountCreatePerson.password">
+                    </div>
+                    <div class="input">
+                        Confirmar Senha
+                        <input type="password" placeholder="Confirme a senha..." [(ngModel)]="confirmarSenha">
+                    </div>
+                </div>
+                <a (click)="NextOrBackStage()">voltar</a>
+                <ui-primary-button (click)="PostRegisterAccount()" [style]="{'fontWeight': 'bold'}">Enviar</ui-primary-button>
+            </div>
+    </div>
+</div>
+
+<div [class]="displayModal">
+    <div class="modal-content">
+        <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="email">
+        <b style="justify-content: center; align-items: center;">Confirme sua conta acessando o link que enviamos para o e-mail!</b>
+        <button (click)="hideModal()">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "/translate": {
+    "target": "https://655.mtis.workers.dev",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/translate": "/translate"
+    }
+  }
+}

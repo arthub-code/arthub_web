@@ -1,0 +1,15 @@
+<p-button *ngIf="!useSpinner" [ngStyle]="style" class="primary-button" matTooltip="Indique um amigo e ganhe bônus!">
+  <img *ngIf="useIcon && iconAlign === 'left'" [src]="iconSrc" class="icon-left" alt="Ícone do botão à esquerda">
+  <span [ngStyle]="textStyle"><ng-content></ng-content></span>
+  <img *ngIf="useIcon && iconAlign === 'right'" [src]="iconSrc" class="icon-right" alt="Ícone do botão à direita">
+</p-button>
+<div class="container-spinner">
+  <app-spinner-ios *ngIf="useSpinner">
+  </app-spinner-ios>
+</div>
+<p-dialog [(visible)]="showModal" [modal]="true" header="{{titleModal}}" (onHide)="closeModal()">
+  <ng-template *ngIf="modalContent" [ngTemplateOutlet]="modalContent"></ng-template>
+  <p-footer>
+    <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
+  </p-footer>
+</p-dialog>

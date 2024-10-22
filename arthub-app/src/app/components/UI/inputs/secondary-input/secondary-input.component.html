@@ -1,0 +1,11 @@
+<div class="primary-input">
+  <label *ngIf="useLabel">{{ label }}</label>
+  <input
+    [type]="type"
+    [value]="value"
+    (input)="onInputChange($event)"
+    [placeholder]="placeholder"
+    [class.invalid]="isInvalid"
+  />
+</div>
+<div *ngIf="isInvalid" class="error-message">{{ errorMessage }}</div>
