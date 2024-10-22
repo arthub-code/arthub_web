@@ -1,0 +1,56 @@
+@import '../../../../../styles.scss';
+
+.acesso-facil{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    align-items: start;
+
+    .painel{
+        background-color: $secondary-color;
+        border: 1px $principal-color solid;
+        height: 13rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+
+        .cards {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: $principal-color;
+            width: 10rem;
+            height: 10rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cards::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(25, 27, 49, 0.5);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .cards h3 {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

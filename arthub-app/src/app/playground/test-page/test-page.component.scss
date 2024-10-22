@@ -1,0 +1,19 @@
+@import '../../../styles.scss';
+
+.playground-container {
+  display: flex;
+  font-family: "Averia Libre", system-ui;
+  flex-direction: column;
+  padding-top: 120px;
+  align-items: center;
+
+  .play-area {
+    background-color: $secondary-color;
+    width: 100%;
+    height: max-content;
+    padding: 4em;
+    margin: 2em 0;
+    display: grid;
+    place-items: center;
+  }
+}

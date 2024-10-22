@@ -1,0 +1,32 @@
+{
+  "language": "Português",
+  "global": {
+    "txt_email": "Email",
+    "txt_password": "Senha"
+  },
+  "pages": {
+    "login": {
+      "title": "Login",
+      "txt_welcomeBack": "Bem-vindo de volta :3",
+      "txt_loginToAccount": "Entre na conta",
+      "txt_login": "Entrar",
+      "txt_createAccount": "Criar conta",
+      "txt_forgotPassword": "Esqueci a senha",
+      "placeholder_emailInput": "Digite seu email...",
+      "placeholder_passwordInput": "Digite sua senha..."
+    }
+  },
+  "messages": {
+    "error": {
+      "validation_fieldIsRequired": "Esse campo é obrigatório.",
+      "validation_minLength": "O tamanho mínimo é %s",
+      "validation_maxLength": "O tamanho máximo é %s"
+    },
+    "success": {
+
+    },
+    "warning": {
+
+    }
+  }
+}

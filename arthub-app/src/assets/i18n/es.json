@@ -1,0 +1,32 @@
+{
+  "language": "Español",
+  "global": {
+    "txt_email": "Correo electrónico",
+    "txt_password": "Contraseña"
+  },
+  "pages": {
+    "login": {
+      "title": "Iniciar sesión",
+      "txt_welcomeBack": "Bienvenido de nuevo :3",
+      "txt_loginToAccount": "Inicia sesión en tu cuenta",
+      "txt_login": "Iniciar sesión",
+      "txt_createAccount": "Crear cuenta",
+      "txt_forgotPassword": "Olvidé mi contraseña",
+      "placeholder_emailInput": "Introduce tu correo electrónico...",
+      "placeholder_passwordInput": "Introduce tu contraseña..."
+    }
+  },
+  "messages": {
+    "error": {
+      "validation_fieldIsRequired": "Este campo es obligatorio.",
+      "validation_minLength": "El tamaño mínimo es %s",
+      "validation_maxLength": "El tamaño máximo es %s"
+    },
+    "success": {
+
+    },
+    "warning": {
+
+    }
+  }
+}

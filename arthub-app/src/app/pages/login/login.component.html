@@ -1,0 +1,29 @@
+<div class="container-login">
+  <div class="container-content-total-login">
+      <div class="logo">
+          <img src="../../../assets/logo.png" alt="">
+          Arthub
+      </div>
+      <div class="container-text-login">
+          <p>{{ 'pages.login.txt_welcomeBack' | translate }}</p>
+          <h1>{{ 'pages.login.txt_loginToAccount' | translate }}</h1>
+      </div>
+      <div class="container-content-login">
+          <ui-primary-input
+          type="email"
+          label="{{ 'global.txt_email' | translate }}"
+          placeholder="{{ 'pages.login.placeholder_emailInput' | translate }}"
+          [(ngModel)]="accountLoginPerson.email" [required]="true" [minLength]="5" [maxLength]="100" [useLabel]="true"
+          ></ui-primary-input>
+          <ui-primary-input
+          type="password"
+          label="{{ 'global.txt_password' | translate }}"
+          placeholder="{{ 'pages.login.placeholder_passwordInput' | translate }}"
+          [(ngModel)]="accountLoginPerson.password" [required]="true" [minLength]="5" [maxLength]="100" [useLabel]="true"
+          ></ui-primary-input>
+          <a class="link" href="#">{{ 'pages.login.txt_forgotPassword' | translate }}</a>
+          <ui-primary-button (click)="PostLoginAccount()" [useSpinner]="isLoading" [textStyle]="{'fontWeight': 'bold'}">{{ 'pages.login.txt_login' | translate }}</ui-primary-button>
+          <p><a class="link" href="registro">{{ 'pages.login.txt_createAccount' | translate }}</a></p>
+      </div>
+  </div>
+</div>
