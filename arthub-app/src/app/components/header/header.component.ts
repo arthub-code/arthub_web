@@ -26,5 +26,4 @@ export class HeaderComponent {
     this.sidebarPosition = position;
     this.sidebarMenuVisible = !this.sidebarMenuVisible;
   }
-
 }
