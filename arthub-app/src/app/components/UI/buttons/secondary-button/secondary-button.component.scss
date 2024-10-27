@@ -28,3 +28,11 @@
     background-color: $secondary-color-active;
   }
 }
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #191B31;
+  padding: 20px;
+}
+

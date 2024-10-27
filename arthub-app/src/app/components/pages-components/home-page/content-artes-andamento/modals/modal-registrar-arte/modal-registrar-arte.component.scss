@@ -3,61 +3,30 @@
 .container-content-modal{
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: 15px;
+    width: 500px;
+    height: 300px;
+    gap: 20px;
 
+    
     .container-division-content-form{
         display: flex;
         align-items: center;
         width: 100%;
-        justify-content: space-between;
-
-        .container-switch{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            
-            div{
-                width: 40px;
-                height: 20px;
-                background-color: #faf8c7;
-                display: flex;
-                padding: 5px;
-                border-radius: 2px;
-
-                .button-active{
-                    height: 100%;
-                    width: 70%;
-                    position: relative;
-                    border: none;
-                    left: 0px;
-                    cursor: pointer;
-                    border-radius: 2px;
-                    background-color: $secondary-color;
-                    transition: all 0.3s ease-in-out;
-                }
-
-                .button-desactive{
-                    left: 10px;
-                    width: 70%;
-                    border-radius: 2px;
-                    border: none;
-                    cursor: pointer;
-                    background-color: $secondary-color;
-                    position: relative;
-                    transition: all 0.3s ease-in-out;
-                }
-
-                button:hover{
-                    background-color: #1b1064;
-                    transition: all 0.3s ease-in-out;
-                }
-            }
+        gap: 10px;
+        justify-content: space-around;
+        
+        ui-primary-select{
+            width: 100%;
+        }
+        
+        ui-third-button{
+            width: 100%;
         }
     }
 
-    .input{
+    .calendar{
         display: flex;
         flex-direction: column;
+        gap: 5px;
     }
 }

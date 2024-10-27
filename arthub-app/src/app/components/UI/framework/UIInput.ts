@@ -14,6 +14,7 @@ export default class UIInput extends UIComponent implements ControlValueAccessor
   @Input() minLength: number | null = null;
   @Input() maxLength: number | null = null;
   @Input() errorMessage: string = '';
+  @Input() useObrigatory: boolean = true;
 
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
 

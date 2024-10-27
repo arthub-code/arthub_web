@@ -3,9 +3,16 @@
   <span [ngStyle]="textStyle"><ng-content></ng-content></span>
   <img *ngIf="useIcon && iconAlign === 'right'" [src]="iconSrc" class="icon-right" alt="Ícone do botão à direita">
 </p-button>
-<p-dialog [(visible)]="showModal" [modal]="true" header="{{titleModal}}" (onHide)="closeModal()">
-  <ng-template *ngIf="modalContent" [ngTemplateOutlet]="modalContent"></ng-template>
-  <p-footer>
-    <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
-  </p-footer>
+<p-dialog [(visible)]="showModal" [modal]="true" (onHide)="closeModal()">
+  <ng-template pTemplate="headless">
+    <div class="modal-container">
+      <div [style]="{ display: 'flex', justifyContent: 'space-between', width: '100%', marginBottom: '20px' }"><h1>{{titleModal}}</h1><h1 [style]="{ cursor: 'pointer' }" (click)="closeModal()">x</h1></div>
+      <hr>
+      <div [style]="{ marginTop: '20px' }" *ngIf="modalContent" [ngTemplateOutlet]="modalContent">
+      </div>
+      <p-footer>
+        <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
+      </p-footer>
+    </div>
+  </ng-template>
 </p-dialog>
