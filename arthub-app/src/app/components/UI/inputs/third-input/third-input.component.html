@@ -1,5 +1,5 @@
 <div class="third-input">
-    <label *ngIf="useLabel">{{ label }}</label>
+    <label *ngIf="useLabel">{{ label }}<i *ngIf="useObrigatory" style="color: red;">*</i></label>
     <input
       [type]="type"
       [value]="value"

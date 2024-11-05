@@ -7,6 +7,7 @@ import { TranslationService } from "../../../services/translation/translation.se
 export default class UIInput extends UIComponent implements ControlValueAccessor {
   @Input() value: string = '';
   @Input() label: string = '';
+  @Input() subLabel: string = '';
   @Input() placeholder: string = '';
   @Input() type: string = 'text'; // Default to text input
   @Input() required: boolean = false;

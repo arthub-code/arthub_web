@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import UIButton from '../../framework/UIButton';
 
 @Component({
@@ -11,6 +11,8 @@ import UIButton from '../../framework/UIButton';
 export class ThirdButtonComponent extends UIButton {
   classButton: string = 'button-active';
   classButtonStatus: boolean = false;
+  @Input() eventOnClick!: () => void;
+  @Input() labelText: string = "labelText=''";
 
   switchButton(){
     if(!this.classButtonStatus){
@@ -21,5 +23,6 @@ export class ThirdButtonComponent extends UIButton {
       this.classButton = 'button-active';
       this.classButtonStatus = false;
     }
+    this.eventOnClick();
   }
 }
