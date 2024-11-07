@@ -34,7 +34,7 @@ import { map } from 'rxjs';
   styleUrl: './modal-registrar-arte.component.scss'
 })
 export class ModalRegistrarArteComponent {
-  payloadCreatedArt!: CreatedArt;
+  payloadCreatedArt: CreatedArt = new CreatedArt();
   dateRange!: Date[];
   dateDefinitionStatus: boolean = true;
   stage: boolean = true;

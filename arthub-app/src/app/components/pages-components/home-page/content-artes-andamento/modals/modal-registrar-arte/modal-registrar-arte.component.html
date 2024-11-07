@@ -1,6 +1,6 @@
 <div *ngIf="stage" class="container-content-modal-etapa-um">
   <div class="container-division-content-form">
-    <ui-third-input label="Nome da arte" [useLabel]="true"></ui-third-input>
+    <ui-third-input [ngModel]="payloadCreatedArt.artName" label="Nome da arte" [useLabel]="true"></ui-third-input>
     <ui-third-button labelText="Data de prazo" [eventOnClick]="DisableDate"></ui-third-button>
   </div>
   <div *ngIf="dateDefinitionStatus" class="calendar">
