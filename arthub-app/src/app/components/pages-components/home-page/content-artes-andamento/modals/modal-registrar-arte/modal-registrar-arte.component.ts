@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrimarySelectComponent } from '../../../../../UI/selects/primary-select/primary-select.component';
@@ -11,8 +12,11 @@ import { ThirdInputComponent } from "../../../../../UI/inputs/third-input/third-
 import { FileInputComponent } from '../../../../../UI/inputs/file-input/file-input.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslationService } from '../../../../../../services/translation/translation.service';
 import ApiResponse from '../../../../../../types/IApiResponse';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'content-artes-andamento-modal-registrar-arte',
@@ -28,19 +32,32 @@ import { map } from 'rxjs';
             FloatLabelModule, 
             ThirdButtonComponent, 
             ThirdInputComponent,
-            HttpClientModule
+            HttpClientModule,
+            TranslateModule
           ],
   templateUrl: './modal-registrar-arte.component.html',
   styleUrl: './modal-registrar-arte.component.scss'
 })
-export class ModalRegistrarArteComponent {
+export class ModalRegistrarArteComponent implements OnInit {
   payloadCreatedArt: CreatedArt = new CreatedArt();
   dateRange!: Date[];
   dateDefinitionStatus: boolean = true;
   stage: boolean = true;
+  isBrowser: boolean;
   optionsSelect: { Value: string, Text: string }[] = [{Value: "PUBLIC", Text: "Publico"},{Value: "PRIVATE", Text: "Privado"},{Value: "NOT_LISTED", Text: "Só com link"}];
 
-  constructor(private cliente: HttpClient){}
+  constructor(
+    private cliente: HttpClient, 
+    private router: Router,
+    private translate: TranslationService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  ngOnInit(): void {
+    this.translate.initTranslate();
+  }
 
   NextOrBackStage(){
     if(!this.stage)

@@ -4,9 +4,10 @@ import UIComponent from "../UIComponent";
 
 @Directive()
 export default class UISelect extends UIComponent{
-    @Input() labelText: string = "label text";
+    @Input() labelText?: string;
     @Input() useObrigatory: boolean = true;
     @Input() options: OptionsSelect[] = [
         new OptionsSelect("valor1", "texto1"),
     ]
+    @Input() placeholder?: string;
 }

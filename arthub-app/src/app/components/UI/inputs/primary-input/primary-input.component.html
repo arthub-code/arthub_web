@@ -6,7 +6,6 @@
     (input)="onInputChange($event)"
     [placeholder]="placeholder"
     [class.invalid]="isInvalid"
-    [(ngModel)]="ngModel"
   />
 </div>
 <div *ngIf="isInvalid" class="error-message">{{ errorMessage }}</div>

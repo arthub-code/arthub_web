@@ -1,39 +1,53 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID, ɵunwrapSafeValue } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
-import ApiResponse from '../../types/IApiResponse';
-import { TranslationService } from '../../services/translation/translation.service';
-import { map } from 'rxjs';
 import { PrimaryButtonComponent } from '../../components/UI/buttons/primary-button/primary-button.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { PrimarySelectComponent } from '../../components/UI/selects/primary-select/primary-select.component';
+import { TranslationService } from '../../services/translation/translation.service';
+import { PrimaryInputComponent } from "../../components/UI/inputs/primary-input/primary-input.component";
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import ApiResponse from '../../types/IApiResponse';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-registrar',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     HttpClientModule,
-    PrimaryButtonComponent
+    PrimaryButtonComponent,
+    PrimarySelectComponent,
+    PrimaryInputComponent,
+    TranslateModule
   ],
   templateUrl: './registrar.component.html',
   styleUrls: ['./registrar.component.scss']
 })
-export class RegistrarComponent {
+export class RegistrarComponent implements OnInit {
   accountCreatePerson: RegisterAccount = new RegisterAccount();
   etapa = 1;
+  isBrowser: boolean;
   classStepTwo: string = "none";
   classStepOne: string = "flex";
   confirmarSenha!: string;
   nome!: string;
   sobrenome!: string;
   displayModal: string = "closedModal"; 
+  optionsSelect: { Value: string, Text: string }[] = [{Value: "Artist", Text: "Artista"},{Value: "Buyer", Text: "Consumidor da arte"}];
 
-  constructor(private cliente: HttpClient, private translationService: TranslationService) {}
+  constructor(
+    private cliente: HttpClient, 
+    private translate: TranslationService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit() {
     this.accountCreatePerson.userAccountType = '';
+    this.translate.initTranslate();
   }
 
   public PostRegisterAccount() {
@@ -45,7 +59,7 @@ export class RegistrarComponent {
           map(async (response: ApiResponse) => {
             if (response && response.data) {
               this.displayModal = "openModal";
-              return await this.translationService.translateText(response.data, 'pt');
+              return await this.translate.translateText(response.data, 'pt');
             }
             return 'Sua conta foi requisitada com sucesso. Enviamos um email de confirmação, estamos no aguardo de sua resposta.';
           })
@@ -57,12 +71,12 @@ export class RegistrarComponent {
           },
           async (error: any) => {
             let errerResponse: ApiResponse = error?.error;
-            const errorMessage = await this.translationService.translateText(errerResponse.data) || 'Ocorreu um erro durante o cadastro. Por favor entre em contato com o suporte.';
+            const errorMessage = await this.translate.translateText(errerResponse.data) || 'Ocorreu um erro durante o cadastro. Por favor entre em contato com o suporte.';
             alert(errorMessage);
           }
         );
-      else
-        alert("As senhas não são iguais");
+    else
+      alert("As senhas não são iguais");
   }
 
   public ValidationProxStep(){

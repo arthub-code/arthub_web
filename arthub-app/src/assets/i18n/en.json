@@ -14,6 +14,45 @@
       "txt_forgotPassword": "Forgot password",
       "placeholder_emailInput": "Enter your email...",
       "placeholder_passwordInput": "Enter your password..."
+    },
+    "home": {
+      "modal_register_art": {
+        "txt_nameArtInput": "Art name",
+        "txt_dataButton": "Deadline date",
+        "txt_dataInput": "What is the deadline?",
+        "txt_stepButton": "Continue to step 2",
+        "txt_subtitle": "Select your references!",
+        "txt_fileLabel": "Drag your image here",
+        "txt_fileSublabel": "Or you can select it by clicking here",
+        "txt_backStepButton": "Go back to step 1",
+        "placeholder_dataInput": "Select the deadline"
+      }
+    },
+    "register": {
+      "txt_logoText": "Arthub",
+      "txt_welcome": "Welcome to Arthub",
+      "txt_title": "Create a new account",
+      "txt_registerAccount": "Already have an account?",
+      "txt_registerLink": "click here",
+      "txt_stepText": "Step",
+      "placeholder_select": "Select account type",
+      "txt_labelName": "Name",
+      "placeholder_name": "Enter your name...",
+      "txt_labelSurname": "Last name",
+      "placeholder_surname": "Enter your last name...",
+      "txt_labelSocialName": "How would you like to be called?",
+      "placeholder_socialName": "Enter your nickname...",
+      "txt_inputTextDate": "Date of birth",
+      "txt_buttonNext": "Next",
+      "placeholder_username": "Username",
+      "txt_inputName": "Username",
+      "txt_labelEmail": "Email",
+      "placeholder_email": "Enter your email...",
+      "placeholder_password": "Enter your password...",
+      "placeholder_confirmPassword": "Confirm your password...",
+      "txt_buttonBack": "Back",
+      "txt_buttonSend": "Submit",
+      "txt_modalConfirmEmail": "Confirm your account by accessing the link we sent to your email!"
     }
   },
   "messages": {

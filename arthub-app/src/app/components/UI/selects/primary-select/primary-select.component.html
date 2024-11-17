@@ -1,6 +1,7 @@
 <div class="input">
-    <label>{{labelText}}<i *ngIf="useObrigatory" style="color: red;">*</i></label>
+    <label *ngIf="labelText != null">{{labelText}}<i *ngIf="useObrigatory" style="color: red;">*</i></label>
     <select id="options" name="options" required>
+        <option *ngIf="placeholder != null" disabled selected>{{placeholder}}</option>
         <option *ngFor="let option of options" [value]="option.Value">{{ option.Text }}</option>
     </select>
 </div>

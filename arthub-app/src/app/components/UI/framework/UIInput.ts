@@ -16,7 +16,6 @@ export default class UIInput extends UIComponent implements ControlValueAccessor
   @Input() maxLength: number | null = null;
   @Input() errorMessage: string = '';
   @Input() useObrigatory: boolean = true;
-  @Input() ngModel: any;
 
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
 
