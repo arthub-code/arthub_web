@@ -4,6 +4,7 @@ import { PrimaryButtonComponent } from "../primary-button/primary-button.compone
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
+import { SpinnerIosComponent } from '../../spinner/spinner-ios/spinner-ios.component';
 
 @Component({
   selector: 'ui-secondary-button',
@@ -11,6 +12,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     PrimaryButtonComponent,
+    SpinnerIosComponent,
     ButtonModule,
     DialogModule
   ],

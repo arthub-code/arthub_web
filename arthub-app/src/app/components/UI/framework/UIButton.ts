@@ -10,6 +10,7 @@ export default class UIButton extends UIComponent {
   @Input() iconSrc: string = '';
   @Input() textStyle: { [key: string]: string } = {};
   @Input() useModal: boolean = false;
+  @Input() useFooter: boolean = false;
 
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
