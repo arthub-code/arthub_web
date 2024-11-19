@@ -1,27 +1,24 @@
-<hr>
-<div class="container-content-modal">
-  <div class="input">
-    <b>Nome<i style="color: red;">*</i></b>
-    <input type="text">
-  </div>
+<div *ngIf="stage" class="container-content-modal-etapa-um">
   <div class="container-division-content-form">
-    <div class="input">
-      <b>Visibilidade<i style="color: red;">*</i></b>
-      <select id="options" name="options" required>
-        <option value="Public">Publico</option>
-        <option value="Private">Privado</option>+
-        <option value="Link">Só com link</option>
-      </select>
-    </div>
-    <div class="container-switch">
-      Data de prazo
-      <div class="switch">
-        <button [class]="classButton" (click)="switchButton()"></button>
-      </div>
-    </div>
+    <ui-third-input [(ngModel)]="payloadCreatedArt.artName" label="{{ 'pages.home.modal_registrar_arte.txt_nameArtInput' | translate }}" [useLabel]="true"></ui-third-input>
+    <ui-third-button labelText="{{ 'pages.home.modal_registrar_arte.txt_dataButton' | translate }}" [eventOnClick]="DisableDate"></ui-third-button>
   </div>
-  <div class="input">
-    <b>Qual é o prazo?<i style="color: red;">*</i></b>
-    <input type="date" name="" id="">
+  <div *ngIf="dateDefinitionStatus" class="calendar">
+    <b>{{ 'pages.home.modal_registrar_arte.txt_dataInput' | translate }}<i style="color: red;">*</i></b>
+    <p-calendar 
+      [(ngModel)]="dateRange" 
+      selectionMode="range" 
+      [readonlyInput]="true" 
+      [showIcon]="true"
+      dateFormat="dd/mm/yy"
+      placeholder="{{ 'pages.home.modal_registrar_arte.placeholder_dataInput' | translate }}"
+      [style]="{ width: '100%', height: '40px' }"/>
   </div>
+  <hr>
+  <ui-primary-button (click)="NextOrBackStage()"><b>{{ 'pages.home.modal_registrar_arte.txt_stepButton' | translate }}</b></ui-primary-button> 
+</div>
+<div *ngIf="!stage" class="container-content-modal-etapa-dois">
+  <b>{{ 'pages.home.modal_registrar_arte.txt_subtitle' | translate }}</b>
+  <ui-file-input label="{{ 'pages.home.modal_registrar_arte.txt_fileLabel' | translate }}" subLabel="{{ 'pages.home.modal_registrar_arte.txt_fileSublabel' | translate }}"></ui-file-input>
+  <ui-primary-button (click)="NextOrBackStage()"><b>{{ 'pages.home.modal_registrar_arte.txt_backStepButton' | translate }}</b></ui-primary-button>
 </div>

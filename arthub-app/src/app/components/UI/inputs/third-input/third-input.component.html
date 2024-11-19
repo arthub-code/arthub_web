@@ -1,0 +1,11 @@
+<div class="third-input">
+    <label *ngIf="useLabel">{{ label }}<i *ngIf="useObrigatory" style="color: red;">*</i></label>
+    <input
+      [type]="type"
+      [value]="value"
+      (input)="onInputChange($event)"
+      [placeholder]="placeholder"
+      [class.invalid]="isInvalid"
+    />
+  </div>
+  <div *ngIf="isInvalid" class="error-message">{{ errorMessage }}</div>

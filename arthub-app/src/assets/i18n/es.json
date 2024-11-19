@@ -14,6 +14,45 @@
       "txt_forgotPassword": "Olvidé mi contraseña",
       "placeholder_emailInput": "Introduce tu correo electrónico...",
       "placeholder_passwordInput": "Introduce tu contraseña..."
+    },
+    "home": {
+      "modal_register_art": {
+        "txt_nameArtInput": "Nombre del arte",
+        "txt_dataButton": "Fecha límite",
+        "txt_dataInput": "¿Cuál es el plazo?",
+        "txt_stepButton": "Continuar al paso 2",
+        "txt_subtitle": "¡Seleccione sus referencias!",
+        "txt_fileLabel": "Arrastra tu imagen aquí",
+        "txt_fileSublabel": "O puedes seleccionarla haciendo clic aquí",
+        "txt_backStepButton": "Volver al paso 1",
+        "placeholder_dataInput": "Seleccione el plazo"
+      }
+    },
+    "register": {
+      "txt_logoText": "Arthub",
+      "txt_welcome": "Bienvenido(a) a Arthub",
+      "txt_title": "Crear una nueva cuenta",
+      "txt_registerAccount": "¿Ya tienes una cuenta?",
+      "txt_registerLink": "haz clic aquí",
+      "txt_stepText": "Paso",
+      "placeholder_select": "Seleccione el tipo de cuenta",
+      "txt_labelName": "Nombre",
+      "placeholder_name": "Introduce tu nombre...",
+      "txt_labelSurname": "Apellido",
+      "placeholder_surname": "Introduce tu apellido...",
+      "txt_labelSocialName": "¿Cómo deseas que te llamen?",
+      "placeholder_socialName": "Introduce tu apodo...",
+      "txt_inputTextDate": "Fecha de nacimiento",
+      "txt_buttonNext": "Siguiente",
+      "placeholder_username": "Nombre de usuario",
+      "txt_inputName": "Nombre de usuario",
+      "txt_labelEmail": "Correo electrónico",
+      "placeholder_email": "Introduce tu correo electrónico...",
+      "placeholder_password": "Introduce tu contraseña...",
+      "placeholder_confirmPassword": "Confirma tu contraseña...",
+      "txt_buttonBack": "Volver",
+      "txt_buttonSend": "Enviar",
+      "txt_modalConfirmEmail": "¡Confirma tu cuenta accediendo al enlace que enviamos a tu correo electrónico!"
     }
   },
   "messages": {
