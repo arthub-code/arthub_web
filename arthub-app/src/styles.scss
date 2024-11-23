@@ -26,9 +26,55 @@ $small: 400px;
     color: $principal-color;
 }
 
-html, body { height: 100%; background-color: $primary-color; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.hidden-container[hidden] {
+  display: none !important;
+  visibility: hidden;
+}
 
+.p-tabview-title {
+  padding: 10px !important;
+  background-color: transparent !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: $principal-color-hover !important;
+  border-color: $principal-color-hover !important;
+}
+
+.p-tabview-nav {
+  background-color: $secondary-color-hover !important;
+  color: $principal-color !important;
+}
+
+.p-tabview-nav li a {
+  border-radius: 0 !important;
+  background-color: $secondary-color !important;
+  border-color: #6b7280 !important;
+}
+
+.p-tabview-nav li a span.ng-star-inserted {
+  border-radius: 0 !important;
+  background-color: $secondary-color-hover !important;
+}
+
+.p-tabview .p-tabview-panels {
+  background-color: transparent !important;
+}
+
+html {
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%; background-color: $primary-color;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    --scrollbar-width: 0px !important;
+    overflow: auto !important;
+
+    .ui-overflow-hidden {
+      overflow: hidden !important;
+    }
+  }
+}
 
 .primary-input{
   display: flex;

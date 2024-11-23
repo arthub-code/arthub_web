@@ -1,8 +1,9 @@
 <div class="acesso-facil">
-    <h2>Acesso Rápido</h2>
-    <div class="painel">
-        <a *ngFor="let card of cards" [href]="card.link" class="cards" style="background-image: url({{card.img}});">
-            <h3>{{ card.text }}</h3>
-        </a>
-    </div>
+  <h2>{{ 'pages.home.component_quick_access.title' | translate }}</h2>
+  <div *ngIf="!loading" class="painel">
+    <a *ngFor="let card of cards" [href]="card.link" class="cards" style="background-image: url({{card.img}});">
+      <div *ngIf="loading"><app-spinner-ios></app-spinner-ios></div>
+      <h3>{{ card.text }}</h3>
+    </a>
+  </div>
 </div>

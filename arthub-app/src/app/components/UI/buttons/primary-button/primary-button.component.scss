@@ -1,16 +1,10 @@
 @import "../../../../../styles.scss";
 
-:host ::ng-deep .p-button {
-  all: unset;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+// Estilos para o botão primário
 .primary-button {
   width: 100%;
   display: flex;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   font-size: 15px;
   gap: 10px;
   color: $primary-color;
@@ -27,18 +21,4 @@
   &:active {
     background-color: $principal-color-active;
   }
-}
-
-.modal-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #191B31;
-  padding: 20px;
-}
-
-.container-spinner{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 }

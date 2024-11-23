@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecondaryButtonComponent } from './secondary-button.component';
+import { PrimaryTabviewComponent } from './primary-tabview.component';
 
-describe('SecondaryButtonComponent', () => {
-  let component: SecondaryButtonComponent;
-  let fixture: ComponentFixture<SecondaryButtonComponent>;
+describe('PrimaryTabviewComponent', () => {
+  let component: PrimaryTabviewComponent;
+  let fixture: ComponentFixture<PrimaryTabviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SecondaryButtonComponent]
+      imports: [PrimaryTabviewComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SecondaryButtonComponent);
+    fixture = TestBed.createComponent(PrimaryTabviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

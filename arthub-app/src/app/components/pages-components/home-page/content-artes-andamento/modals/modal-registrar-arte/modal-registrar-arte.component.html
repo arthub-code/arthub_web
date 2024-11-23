@@ -1,24 +1,43 @@
-<div *ngIf="stage" class="container-content-modal-etapa-um">
+<div [hidden]="!stage" class="container-content-modal-etapa-um hidden-container">
   <div class="container-division-content-form">
-    <ui-third-input [(ngModel)]="payloadCreatedArt.artName" label="{{ 'pages.home.modal_registrar_arte.txt_nameArtInput' | translate }}" [useLabel]="true"></ui-third-input>
-    <ui-third-button labelText="{{ 'pages.home.modal_registrar_arte.txt_dataButton' | translate }}" [eventOnClick]="DisableDate"></ui-third-button>
+    <ui-third-input
+      [(ngModel)]="payloadCreatedArt.artName"
+      label="{{ 'pages.home.modal_register_art.txt_nameArtInput' | translate }}"
+      [useLabel]="true"
+      [width]="'100%'"
+      >
+    </ui-third-input>
+    <ui-third-button
+      labelText="{{ 'pages.home.modal_register_art.txt_dataButton' | translate }}"
+      [eventOnClick]="DisableDate">
+    </ui-third-button>
   </div>
   <div *ngIf="dateDefinitionStatus" class="calendar">
-    <b>{{ 'pages.home.modal_registrar_arte.txt_dataInput' | translate }}<i style="color: red;">*</i></b>
-    <p-calendar 
-      [(ngModel)]="dateRange" 
-      selectionMode="range" 
-      [readonlyInput]="true" 
+    <b>{{ 'pages.home.modal_register_art.txt_dataInput' | translate }}<i style="color: red;">*</i></b>
+    <p-calendar
+      [(ngModel)]="dateRange"
+      selectionMode="range"
+      [readonlyInput]="true"
       [showIcon]="true"
       dateFormat="dd/mm/yy"
-      placeholder="{{ 'pages.home.modal_registrar_arte.placeholder_dataInput' | translate }}"
-      [style]="{ width: '100%', height: '40px' }"/>
+      placeholder="{{ 'pages.home.modal_register_art.placeholder_dataInput' | translate }}"
+      [style]="{ width: '100%', height: '40px' }">
+    </p-calendar>
   </div>
   <hr>
-  <ui-primary-button (click)="NextOrBackStage()"><b>{{ 'pages.home.modal_registrar_arte.txt_stepButton' | translate }}</b></ui-primary-button> 
+  <ui-primary-button (click)="NextOrBackStage()">
+    <b>{{ 'pages.home.modal_register_art.txt_stepButton' | translate }}</b>
+  </ui-primary-button>
 </div>
-<div *ngIf="!stage" class="container-content-modal-etapa-dois">
-  <b>{{ 'pages.home.modal_registrar_arte.txt_subtitle' | translate }}</b>
-  <ui-file-input label="{{ 'pages.home.modal_registrar_arte.txt_fileLabel' | translate }}" subLabel="{{ 'pages.home.modal_registrar_arte.txt_fileSublabel' | translate }}"></ui-file-input>
-  <ui-primary-button (click)="NextOrBackStage()"><b>{{ 'pages.home.modal_registrar_arte.txt_backStepButton' | translate }}</b></ui-primary-button>
+
+<div [hidden]="stage" class="container-content-modal-etapa-dois hidden-container">
+  <b>{{ 'pages.home.modal_register_art.txt_subtitle' | translate }}</b>
+  <ui-primary-tabview
+    *ngIf="initialized"
+    [tabs]="imageRefsTabs"
+    [useIcons]="true">
+  </ui-primary-tabview>
+  <ui-primary-button (click)="NextOrBackStage()">
+    <b>{{ 'pages.home.modal_register_art.txt_backStepButton' | translate }}</b>
+  </ui-primary-button>
 </div>

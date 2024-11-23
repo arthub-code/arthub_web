@@ -2,7 +2,25 @@
   "language": "Português",
   "global": {
     "txt_email": "Email",
-    "txt_password": "Senha"
+    "txt_password": "Senha",
+    "txt_commissions": "Comissões",
+    "txt_arts": "Artes",
+    "txt_profile": "Perfil",
+    "txt_courses": "Cursos",
+    "txt_support": "Suporte",
+    "txt_community": "Comunidade",
+    "txt_hello": "Olá"
+  },
+  "components": {
+    "header": {
+      "txt_referAndEarn": "Indique e Ganhe",
+      "modal_menu_content": {
+        "txt_howAreYouToday": "Como você está hoje?"
+      }
+    },
+    "footer": {
+      "txt_copyright": "© 2024 Victor Barberino - Arthub. Todos os direitos reservados."
+    }
   },
   "pages": {
     "login": {
@@ -16,19 +34,31 @@
       "placeholder_passwordInput": "Digite sua senha..."
     },
     "home": {
-      "modal_registrar_arte": {
-      "txt_nameArtInput": "Nome da arte",
-      "txt_dataButton": "Data de prazo",
-      "txt_dataInput": "Qual é o prazo?",
-      "txt_stepButton": "Continuar para a estapa 2",
-      "txt_subtitle": "Selecione suas referências!",
-      "txt_fileLabel": "Arraste sua imagem aqui",
-      "txt_fileSublabel": "Ou Você pode selecionar clicando aqui",
-      "txt_backStepButton": "Voltar para etapa 1",
-      "placeholder_dataInput": "Selecione o prazo"
+      "component_home_profile": {
+        "txt_artisticProfile": "Perfil Artístico"
+      },
+      "component_quick_access": {
+        "title": "Acesso Rápido"
+      },
+      "component_art_in_progress": {
+        "title": "Artes em andamento",
+        "txt_noHaveArts": "Você não tem nenhuma arte!",
+        "txt_createArt": "Criar Arte"
+      },
+      "modal_register_art": {
+        "title": "Adicione sua Arte",
+        "txt_nameArtInput": "Nome da arte",
+        "txt_dataButton": "Data de prazo",
+        "txt_dataInput": "Qual é o prazo?",
+        "txt_stepButton": "Continuar para a estapa 2",
+        "txt_subtitle": "Selecione suas referências!",
+        "txt_fileLabel": "Arraste sua imagem aqui",
+        "txt_fileSublabel": "Ou Você pode selecionar clicando aqui",
+        "txt_backStepButton": "Voltar para etapa 1",
+        "placeholder_dataInput": "Selecione o prazo"
       }
     },
-    "registrar": {
+    "register": {
       "txt_logoText": "Arthub",
       "txt_welcome": "Seja bem-vindo(a) á arthub",
       "txt_title": "Criar nova conta",
@@ -39,7 +69,7 @@
       "txt_labelName": "Nome",
       "placeholder_name": "Digite seu nome...",
       "txt_labelSurname": "Sobrenome",
-      "placeholder_surname": "Digite seu sobre",
+      "placeholder_surname": "Digite seu Sobrenome",
       "txt_labelSocialName": "Como deseja ser chamdo?",
       "placeholder_socialName": "Digite seu apelido...",
       "txt_inputTextDate": "Data de nascimento",
@@ -52,7 +82,9 @@
       "placeholder_confirmPassword": "Confirme a senha...",
       "txt_buttonBack": "Voltar",
       "txt_buttonSend": "Enviar",
-      "txt_modalConfirmEmail": "Confirme sua conta acessando o link que enviamos para o e-mail!"
+      "txt_modalConfirmEmail": "Confirme sua conta acessando o link que enviamos para o e-mail!",
+      "txt_deviceUpload": "Do dispositivo",
+      "txt_pinterestUpload": "Pinterest"
     }
   },
   "messages": {

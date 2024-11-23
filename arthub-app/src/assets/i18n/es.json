@@ -2,7 +2,25 @@
   "language": "Español",
   "global": {
     "txt_email": "Correo electrónico",
-    "txt_password": "Contraseña"
+    "txt_password": "Contraseña",
+    "txt_commissions": "Comisiones",
+    "txt_arts": "Artes",
+    "txt_profile": "Perfil",
+    "txt_courses": "Cursos",
+    "txt_support": "Apoyo",
+    "txt_community": "Comunidad",
+    "txt_hello": "Hola"
+  },
+  "components": {
+    "header": {
+      "txt_referAndEarn": "Referir y Ganar",
+      "modal_menu_content": {
+        "txt_howAreYouToday": "¿Cómo estás hoy?"
+      }
+    },
+    "footer": {
+      "txt_copyright": "© 2024 Víctor Barberino - Arthub. Todos los derechos reservados."
+    }
   },
   "pages": {
     "login": {
@@ -16,7 +34,19 @@
       "placeholder_passwordInput": "Introduce tu contraseña..."
     },
     "home": {
+      "component_home_profile": {
+        "txt_artisticProfile": "Perfil Artístico"
+      },
+      "component_quick_access": {
+        "title": "Acceso Rápido"
+      },
+      "component_art_in_progress": {
+        "title": "Artes en progreso",
+        "txt_noHaveArts": "¡No tienes arte!",
+        "txt_createArt": "Crear Arte"
+      },
       "modal_register_art": {
+        "title": "Añade tu arte",
         "txt_nameArtInput": "Nombre del arte",
         "txt_dataButton": "Fecha límite",
         "txt_dataInput": "¿Cuál es el plazo?",
@@ -52,7 +82,9 @@
       "placeholder_confirmPassword": "Confirma tu contraseña...",
       "txt_buttonBack": "Volver",
       "txt_buttonSend": "Enviar",
-      "txt_modalConfirmEmail": "¡Confirma tu cuenta accediendo al enlace que enviamos a tu correo electrónico!"
+      "txt_modalConfirmEmail": "¡Confirma tu cuenta accediendo al enlace que enviamos a tu correo electrónico!",
+      "txt_deviceUpload": "Desde el dispositivo",
+      "txt_pinterestUpload": "Pinterest"
     }
   },
   "messages": {

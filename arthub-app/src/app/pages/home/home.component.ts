@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContentArtesAndamentoComponent } from '../../components/pages-components/home-page/content-artes-andamento/content-artes-andamento.component';
 import { ContentAcessoFacilComponent } from '../../components/pages-components/home-page/content-acesso-facil/content-acesso-facil.component';
 import { ContentPerfilHomeComponent } from '../../components/pages-components/home-page/content-perfil-home/content-perfil-home.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { ContentPerfilHomeComponent } from '../../components/pages-components/ho
       CommonModule,
       ContentAcessoFacilComponent,
       ContentArtesAndamentoComponent,
-      ContentPerfilHomeComponent
+      ContentPerfilHomeComponent,
+      TranslateModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

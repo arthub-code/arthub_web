@@ -1,22 +1,19 @@
-<p-button *ngIf="!useSpinner" [ngStyle]="style" class="primary-button" matTooltip="Indique um amigo e ganhe bônus!">
-  <img *ngIf="useIcon && iconAlign === 'left'" [src]="iconSrc" class="icon-left" alt="Ícone do botão à esquerda">
-  <span [ngStyle]="textStyle"><ng-content></ng-content></span>
-  <img *ngIf="useIcon && iconAlign === 'right'" [src]="iconSrc" class="icon-right" alt="Ícone do botão à direita">
-</p-button>
-<div class="container-spinner">
-  <app-spinner-ios *ngIf="useSpinner">
-  </app-spinner-ios>
-</div>
-<p-dialog [(visible)]="showModal" [modal]="true" (onHide)="closeModal()">
-  <ng-template pTemplate="headless">
-    <div class="modal-container">
-      <div [style]="{ display: 'flex', justifyContent: 'space-between', width: '100%', marginBottom: '20px' }"><h1>{{titleModal}}</h1><h1 [style]="{ cursor: 'pointer' }" (click)="closeModal()">x</h1></div>
-      <hr>
-      <div [style]="{ marginTop: '20px' }" *ngIf="modalContent" [ngTemplateOutlet]="modalContent">
-      </div>
-      <p-footer *ngIf="useFooter">
-        <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
-      </p-footer>
-    </div>
-  </ng-template>
-</p-dialog>
+<ui-button
+  [buttonClass]="primaryClass"
+  [useIcon]="useIcon"
+  [useSpinner]="useSpinner"
+  [iconAlign]="iconAlign"
+  [iconSrc]="iconSrc"
+  [textStyle]="textStyle"
+  [useModal]="useModal"
+  [titleModal]="titleModal"
+  [useFooter]="useFooter"
+  (onClick)="onClick.emit()"
+  [modalWidth]="modalWidth"
+  ngSkipHydration
+>
+  <ng-content></ng-content>
+  <div *ngIf="!showModal" modalContent>
+    <ng-content select="[modalContent]"></ng-content>
+  </div>
+</ui-button>
