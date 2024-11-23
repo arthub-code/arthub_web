@@ -1,0 +1,53 @@
+@import "../buttons/primary-button/primary-button.component.scss";
+@import "../buttons/secondary-button/secondary-button.component.scss";
+
+
+// Estilos para p-dialog (modal)
+:host ::ng-deep .p-dialog {
+  position: fixed !important; /* Garante posição fixa */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important; /* Centraliza */
+  margin: 0 !important;
+  width: auto; /* Ajuste conforme necessário */
+  max-width: 90%;
+  transition: opacity 0.2s ease, visibility 0s 0.2s !important; /* Transição suave de fade-out */
+}
+
+:host ::ng-deep .p-dialog.p-dialog-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease !important; /* Transição suave de fade-in */
+}
+
+// Estilos para o cabeçalho do modal
+:host ::ng-deep .p-dialog .p-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+// Estilos para o conteúdo do modal
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #191B31;
+  padding: 20px;
+}
+
+// Estilos para o spinner de carregamento
+.container-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+// Estilos gerais para p-button
+:host ::ng-deep .p-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

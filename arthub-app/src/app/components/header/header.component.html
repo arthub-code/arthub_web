@@ -5,8 +5,8 @@
     </div>
     <div class="buttons-indique-ham">
       <ui-primary-button [useIcon]="true" [useModal]="true" [textStyle]="{'fontWeight': '700'}" iconAlign="left" iconSrc="../../../assets/dinehiro.svg">
-        Indique e ganhe
-        <ng-template #modalContent><header-indique-e-ganhe-modal></header-indique-e-ganhe-modal></ng-template>
+        {{ 'components.header.txt_referAndEarn' | translate }}
+        <div modalContent><header-indique-e-ganhe-modal></header-indique-e-ganhe-modal></div>
       </ui-primary-button>
       <i (click)="toggleSidebar('right')" class="pi pi-align-right menu-btn" style="font-size: 2rem;"></i>
     </div>
@@ -14,7 +14,6 @@
 <div class="container-bottom-header">
   <div>
     <i (click)="toggleSidebar('bottom')" class="pi pi-align-right menu-btn" style="font-size: 2rem;"></i>
-    <p>Inicio</p>
   </div>
 
 </div>

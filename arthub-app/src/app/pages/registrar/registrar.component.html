@@ -2,45 +2,45 @@
     <div class="container-content-total-registro">
         <div class="logo">
             <img src="../../../assets/logo.png" alt="">
-            {{ 'pages.registrar.txt_logoText' | translate }}
+            {{ 'pages.register.txt_logoText' | translate }}
         </div>
         <div class="container-text-registro">
-            <p>{{ 'pages.registrar.txt_welcome' | translate }}</p>
-            <h1>{{ 'pages.registrar.txt_title' | translate }}</h1>
-            <p>{{ 'pages.registrar.txt_registerAccount' | translate }}<a href="login">{{ 'pages.registrar.txt_registerLink' | translate }}</a></p>
+            <p>{{ 'pages.register.txt_welcome' | translate }}</p>
+            <h1>{{ 'pages.register.txt_title' | translate }}</h1>
+            <p>{{ 'pages.register.txt_registerAccount' | translate }}<a href="login">{{ 'pages.register.txt_registerLink' | translate }}</a></p>
         </div>
         <div class="container-content-registro">
-            <span>{{ 'pages.registrar.txt_stepText' | translate }} {{etapa}}</span>
+            <span>{{ 'pages.register.txt_stepText' | translate }} {{etapa}}</span>
             <div [ngStyle]="{'display': classStepOne}" class="step-one">
-                <ui-primary-select [options]="optionsSelect" placeholder="{{ 'pages.registrar.placeholder_select' | translate }}"></ui-primary-select>
+                <ui-primary-select [options]="optionsSelect" placeholder="{{ 'pages.register.placeholder_select' | translate }}"></ui-primary-select>
                 <div class="container-division-content-registro">
-                    <ui-primary-input type="text" label="{{ 'pages.registrar.txt_labelName' | translate }}" placeholder="{{ 'pages.registrar.placeholder_name' | translate }}" [(ngModel)]="nome"></ui-primary-input>
-                    <ui-primary-input type="text" label="{{ 'pages.registrar.txt_labelSurname' | translate }}" placeholder="{{ 'pages.registrar.placeholder_surname' | translate }}" [(ngModel)]="sobrenome"></ui-primary-input>
+                    <ui-primary-input type="text" label="{{ 'pages.register.txt_labelName' | translate }}" placeholder="{{ 'pages.register.placeholder_name' | translate }}" [(ngModel)]="nome"></ui-primary-input>
+                    <ui-primary-input type="text" label="{{ 'pages.register.txt_labelSurname' | translate }}" placeholder="{{ 'pages.register.placeholder_surname' | translate }}" [(ngModel)]="sobrenome"></ui-primary-input>
                 </div>
-                <ui-primary-input type="text" label="{{ 'pages.registrar.txt_labelSocialName' | translate }}" placeholder="{{ 'pages.registrar.placeholder_socialName' | translate }}" [(ngModel)]="accountCreatePerson.socialName"></ui-primary-input>
+                <ui-primary-input type="text" label="{{ 'pages.register.txt_labelSocialName' | translate }}" placeholder="{{ 'pages.register.placeholder_socialName' | translate }}" [(ngModel)]="accountCreatePerson.socialName"></ui-primary-input>
                 <div class="container-division-content-registro">
                     <div class="input">
-                        {{ 'pages.registrar.txt_inputTextDate' | translate }}
+                        {{ 'pages.register.txt_inputTextDate' | translate }}
                         <input type="date" [(ngModel)]="accountCreatePerson.dateOfBirth">
                     </div>
-                    <ui-primary-button (click)="NextOrBackStage()" [style]="{'fontWeight': 'bold', 'height': '100%'}" width="100%">{{ 'pages.registrar.txt_buttonNext' | translate }}</ui-primary-button>
+                    <ui-primary-button (click)="NextOrBackStage()" [style]="{'fontWeight': 'bold', 'height': '100%'}" width="100%">{{ 'pages.register.txt_buttonNext' | translate }}</ui-primary-button>
                 </div>
             </div>
             <div [ngStyle]="{'display': classStepTwo}" class="step-two">
                 <div class="input">
-                    {{ 'pages.registrar.placeholder_username' | translate }}
+                    {{ 'pages.register.placeholder_username' | translate }}
                     <div>
                         <span>&#64;</span>
-                        <input type="text" placeholder="{{ 'pages.registrar.txt_inputName' | translate }}" [(ngModel)]="accountCreatePerson.username">
+                        <input type="text" placeholder="{{ 'pages.register.txt_inputName' | translate }}" [(ngModel)]="accountCreatePerson.username">
                     </div>
                 </div>
-                <ui-primary-input type="text" label="{{ 'pages.registrar.txt_labelEmail' | translate }}" placeholder="{{ 'pages.registrar.placeholder_email' | translate }}" [(ngModel)]="accountCreatePerson.email"></ui-primary-input>
+                <ui-primary-input type="text" label="{{ 'pages.register.txt_labelEmail' | translate }}" placeholder="{{ 'pages.register.placeholder_email' | translate }}" [(ngModel)]="accountCreatePerson.email"></ui-primary-input>
                 <div class="container-division-content-registro">
-                    <ui-primary-input type="password" placeholder="{{ 'pages.registrar.placeholder_password' | translate }}" [(ngModel)]="accountCreatePerson.password"></ui-primary-input>
-                    <ui-primary-input type="password" placeholder="{{ 'pages.registrar.placeholder_confirmPassword' | translate }}" [(ngModel)]="confirmarSenha"></ui-primary-input>
+                    <ui-primary-input type="password" placeholder="{{ 'pages.register.placeholder_password' | translate }}" [(ngModel)]="accountCreatePerson.password"></ui-primary-input>
+                    <ui-primary-input type="password" placeholder="{{ 'pages.register.placeholder_confirmPassword' | translate }}" [(ngModel)]="confirmarSenha"></ui-primary-input>
                 </div>
-                <a (click)="NextOrBackStage()">{{ 'pages.registrar.txt_buttonBack' | translate }}</a>
-                <ui-primary-button (click)="PostRegisterAccount()" [style]="{'fontWeight': 'bold'}">{{ 'pages.registrar.txt_buttonSend' | translate }}</ui-primary-button>
+                <a (click)="NextOrBackStage()">{{ 'pages.register.txt_buttonBack' | translate }}</a>
+                <ui-primary-button (click)="PostRegisterAccount()" [style]="{'fontWeight': 'bold'}">{{ 'pages.register.txt_buttonSend' | translate }}</ui-primary-button>
             </div>
     </div>
 </div>
@@ -48,7 +48,7 @@
 <div [class]="displayModal">
     <div class="modal-content">
         <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="email">
-        <b style="justify-content: center; align-items: center;">{{ 'pages.registrar.txt_modalConfirmEmail' | translate }}</b>
+        <b style="justify-content: center; align-items: center;">{{ 'pages.register.txt_modalConfirmEmail' | translate }}</b>
         <button (click)="hideModal()">Ok</button>
     </div>
 </div>

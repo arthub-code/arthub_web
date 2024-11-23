@@ -2,7 +2,25 @@
   "language": "English",
   "global": {
     "txt_email": "Email",
-    "txt_password": "Password"
+    "txt_password": "Password",
+    "txt_commissions": "Commissions",
+    "txt_arts": "Arts",
+    "txt_profile": "Profile",
+    "txt_courses": "Courses",
+    "txt_support": "Support",
+    "txt_community": "Community",
+    "txt_hello": "Hello"
+  },
+  "components": {
+    "header": {
+      "txt_referAndEarn": "Refer and Earn",
+      "modal_menu_content": {
+        "txt_howAreYouToday": "How are you today?"
+      }
+    },
+    "footer": {
+      "txt_copyright": "© 2024 Victor Barberino - Arthub. All rights reserved."
+    }
   },
   "pages": {
     "login": {
@@ -16,7 +34,19 @@
       "placeholder_passwordInput": "Enter your password..."
     },
     "home": {
+      "component_home_profile": {
+        "txt_artisticProfile": "Artistic Profile"
+      },
+      "component_quick_access": {
+        "title": "Quick Access"
+      },
+      "component_art_in_progress": {
+        "title": "Arts in progress",
+        "txt_noHaveArts": "You have no art!",
+        "txt_createArt": "Create Art"
+      },
       "modal_register_art": {
+        "title": "Add Your Art",
         "txt_nameArtInput": "Art name",
         "txt_dataButton": "Deadline date",
         "txt_dataInput": "What is the deadline?",
@@ -52,7 +82,9 @@
       "placeholder_confirmPassword": "Confirm your password...",
       "txt_buttonBack": "Back",
       "txt_buttonSend": "Submit",
-      "txt_modalConfirmEmail": "Confirm your account by accessing the link we sent to your email!"
+      "txt_modalConfirmEmail": "Confirm your account by accessing the link we sent to your email!",
+      "txt_deviceUpload": "From the device",
+      "txt_pinterestUpload": "Pinterest"
     }
   },
   "messages": {

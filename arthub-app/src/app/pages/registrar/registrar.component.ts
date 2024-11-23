@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID, ɵunwrapSafeValue } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PrimaryButtonComponent } from '../../components/UI/buttons/primary-button/primary-button.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,6 +20,7 @@ import { map } from 'rxjs';
     PrimaryButtonComponent,
     PrimarySelectComponent,
     PrimaryInputComponent,
+    CommonModule,
     TranslateModule
   ],
   templateUrl: './registrar.component.html',
@@ -34,11 +35,11 @@ export class RegistrarComponent implements OnInit {
   confirmarSenha!: string;
   nome!: string;
   sobrenome!: string;
-  displayModal: string = "closedModal"; 
+  displayModal: string = "closedModal";
   optionsSelect: { Value: string, Text: string }[] = [{Value: "Artist", Text: "Artista"},{Value: "Buyer", Text: "Consumidor da arte"}];
 
   constructor(
-    private cliente: HttpClient, 
+    private cliente: HttpClient,
     private translate: TranslationService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
@@ -67,7 +68,7 @@ export class RegistrarComponent implements OnInit {
         .subscribe(
           async (translatedMessage: Promise<string | undefined>) => {
             const successMessage = await translatedMessage;
-            this.displayModal = "openModal"; 
+            this.displayModal = "openModal";
           },
           async (error: any) => {
             let errerResponse: ApiResponse = error?.error;
@@ -115,7 +116,7 @@ export class RegistrarComponent implements OnInit {
     }
   }
 
-  
+
   hideModal() {
     this.displayModal = "closedModal";
   }

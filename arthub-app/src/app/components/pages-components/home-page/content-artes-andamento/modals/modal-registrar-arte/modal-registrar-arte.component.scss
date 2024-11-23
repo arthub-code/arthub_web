@@ -3,21 +3,21 @@
 .container-content-modal-etapa-um{
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 100%;
     gap: 20px;
 
-    
+
     .container-division-content-form{
         display: flex;
         align-items: center;
         width: 100%;
         gap: 10px;
         justify-content: space-around;
-        
+
         ui-primary-select{
             width: 100%;
         }
-        
+
         ui-third-button{
             width: 100%;
         }

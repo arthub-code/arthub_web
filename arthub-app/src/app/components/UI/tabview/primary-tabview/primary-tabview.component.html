@@ -1,0 +1,13 @@
+<p-tabView [styleClass]="'primary-tabview'">
+  <ng-container *ngFor="let tab of tabs; let i = index">
+    <p-tabPanel [header]="tab.title" >
+      <!-- Projeta componentes dinâmicos -->
+      <ng-container *ngIf="tab.component">
+        <div #dynamicContent></div>
+      </ng-container>
+
+      <!-- Projeta conteúdo estático -->
+      <div *ngIf="!tab.component" [innerHTML]="tab.content"></div>
+    </p-tabPanel>
+  </ng-container>
+</p-tabView>

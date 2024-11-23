@@ -1,0 +1,27 @@
+
+@import url("../../../../../styles.scss");
+
+:host {
+  .primary-tabview {
+    .p-tabview-nav {
+      background-color: red !important; /* Cor de fundo do container de abas */
+    }
+
+    .p-tabview-nav-link {
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+
+    .p-tabview-nav-link.p-highlight {
+      background-color: #007ad9;
+      color: white;
+    }
+
+
+  }
+}
