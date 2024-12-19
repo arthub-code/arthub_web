@@ -1,53 +1,184 @@
+@import "../../../../styles.scss";
 @import "../buttons/primary-button/primary-button.component.scss";
 @import "../buttons/secondary-button/secondary-button.component.scss";
 
-
-// Estilos para p-dialog (modal)
 :host ::ng-deep .p-dialog {
-  position: fixed !important; /* Garante posição fixa */
+  max-height: 90vh !important;
+  max-width: 90vw !important;
+  height: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: fixed !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important; /* Centraliza */
-  margin: 0 !important;
-  width: auto; /* Ajuste conforme necessário */
-  max-width: 90%;
-  transition: opacity 0.2s ease, visibility 0s 0.2s !important; /* Transição suave de fade-out */
+  transform: translate(-50%, -50%) !important;
+
+  .p-dialog-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .modal-container {
+    display: flex !important;
+    flex-direction: column !important;
+    max-height: calc(90vh - 2rem) !important;
+    background-color: #191B31;
+    padding: 1rem;
+    
+    .modal-header {
+      flex: 0 0 auto;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content {
+      flex: 1 1 auto;
+      overflow-y: auto !important;
+      min-height: 0;
+      padding-right: 0.5rem;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+
+    .modal-footer {
+      flex: 0 0 auto;
+      margin-top: 1rem;
+    }
+  }
+
+
+  @media (max-width: 768px) { // Dispositivos médios
+    max-width: 100%; /* Largura total */
+    max-height: 100%; /* Altura total */
+    border-radius: 8px; /* Estética */
+    top: 50%; /* Reforça centralização */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 480px) { // Dispositivos muito pequenos
+    width: 100%; /* Preenche 100% da largura */
+    height: 100%; /* Preenche 100% da altura */
+    top: 0; /* Remove centralização */
+    left: 0;
+    transform: none; /* Sem transform */
+    border-radius: 0; /* Remove bordas arredondadas */
+  }
 }
 
+// Modal visível
 :host ::ng-deep .p-dialog.p-dialog-visible {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.2s ease !important; /* Transição suave de fade-in */
+  transition: opacity 0.2s ease !important; /* Transição suave */
 }
 
-// Estilos para o cabeçalho do modal
+// Cabeçalho do modal
 :host ::ng-deep .p-dialog .p-dialog-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+
+  @media (max-width: 768px) {
+    padding: 8px; /* Padding reduzido */
+  }
 }
 
-// Estilos para o conteúdo do modal
+// Conteúdo do modal
+:host ::ng-deep .p-dialog .p-dialog-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Adiciona rolagem vertical */
+  max-height: calc(100% - 60px); /* Espaço ajustado para header/footer */
+  padding: 15px;
+
+  @media (max-width: 768px) {
+    padding: 10px; /* Reduz padding */
+    max-height: calc(100% - 50px); /* Considera alturas menores */
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px;
+    max-height: 100%; /* Usa toda a altura disponível */
+  }
+}
+
+// Rodapé do modal (p-dialog-footer)
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center; /* Centraliza botões */
+  }
+}
+
+// Ajuste do container principal do modal
 .modal-container {
   display: flex;
   flex-direction: column;
   background-color: #191B31;
   padding: 20px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    height: 100%; /* Usa altura total */
+  }
 }
 
-// Estilos para o spinner de carregamento
-.container-spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+// Scrollbar para o modal
+:host ::ng-deep .p-dialog .p-dialog-content::-webkit-scrollbar {
+  width: 8px;
 }
 
-// Estilos gerais para p-button
+:host ::ng-deep .p-dialog .p-dialog-content::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+// Botões gerais
 :host ::ng-deep .p-button {
   all: unset;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    gap: 5px; /* Ajusta espaçamento */
+  }
 }

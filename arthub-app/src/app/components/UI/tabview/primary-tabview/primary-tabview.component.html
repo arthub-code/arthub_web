@@ -1,10 +1,19 @@
 <p-tabView [styleClass]="'primary-tabview'">
   <ng-container *ngFor="let tab of tabs; let i = index">
     <p-tabPanel [header]="tab.title" >
+      <ng-template pTemplate="header" *ngIf="tab.icon != ''">
+        <div class="">
+          <p-avatar
+          [image]="tab.icon"
+          shape="circle" />
+          <span class="font-bold white-space-nowrap m-0">
+              {{ tab.title }}
+          </span>
+        </div>
+      </ng-template>
+
       <!-- Projeta componentes dinâmicos -->
-      <ng-container *ngIf="tab.component">
-        <div #dynamicContent></div>
-      </ng-container>
+      <ng-template #dynamicContentContainer *ngIf="tab.component"></ng-template>
 
       <!-- Projeta conteúdo estático -->
       <div *ngIf="!tab.component" [innerHTML]="tab.content"></div>

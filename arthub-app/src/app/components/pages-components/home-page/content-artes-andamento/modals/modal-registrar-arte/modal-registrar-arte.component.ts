@@ -19,6 +19,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { AvatarModule } from 'primeng/avatar';
 import { TabPanel } from '../../../../../UI/framework/UITabview';
 import { PrimaryTabviewComponent } from "../../../../../UI/tabview/primary-tabview/primary-tabview.component";
+import { DevianartTabContentComponent } from './devianart-tab-content/devianart-tab-content.component';
+import { ArtImageRef, CreatedArt } from '../../../../../../model/ArtModel';
+import { UiPrimaryVisualizerComponent } from '../../../../../UI/visualizer/ui-primary-visualizer/ui-primary-visualizer.component';
 
 @Component({
   selector: 'content-artes-andamento-modal-registrar-arte',
@@ -36,7 +39,8 @@ import { PrimaryTabviewComponent } from "../../../../../UI/tabview/primary-tabvi
     TranslateModule,
     TabViewModule,
     AvatarModule,
-    PrimaryTabviewComponent
+    PrimaryTabviewComponent,
+    UiPrimaryVisualizerComponent
   ],
   templateUrl: './modal-registrar-arte.component.html',
   styleUrls: ['./modal-registrar-arte.component.scss'],
@@ -47,6 +51,7 @@ export class ModalRegistrarArteComponent implements OnInit {
   @ViewChild('uploadTemplate') uploadTemplate!: TemplateRef<any>;
 
   payloadCreatedArt: CreatedArt = new CreatedArt();
+  artImageRefs: ArtImageRef[] = [];
   dateRange!: Date[];
   dateDefinitionStatus: boolean = true;
   stage: boolean = true;
@@ -71,13 +76,13 @@ export class ModalRegistrarArteComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    await this.translate.initTranslate();  // Garantir que as traduções sejam inicializadas corretamente
+    await this.translate.initTranslate();
 
     // Espera que a criação das abas esteja completa antes de seguir
     await this.createTabTemplates();
 
     // Após completar a criação, marque como inicializado
-    this.initialized = true;  // Variável de controle
+    this.initialized = true;
 
     // Agora, as abas devem ter as traduções carregadas corretamente, então podemos atualizar os títulos
     await Promise.all(
@@ -87,7 +92,6 @@ export class ModalRegistrarArteComponent implements OnInit {
       })
     ).then((updatedTabs) => {
       this.imageRefsTabs = updatedTabs;
-      console.log(this.imageRefsTabs);  // Verifique se as abas estão com os títulos corretamente
     });
   }
 
@@ -104,16 +108,20 @@ export class ModalRegistrarArteComponent implements OnInit {
         icon: "",
         component: FileInputComponent,
         inputs: {
-          label: labelMl,  // Usando a tradução carregada
-          subLabel: subLabelMl  // Usando a tradução carregada
+          label: labelMl,
+          subLabel: subLabelMl,
+          bUseInternalVisualizer: false
         }
       },
       {
-        mlId: "pages.register.txt_pinterestUpload",
-        tabId: "pinterestTemplate",
+        mlId: "pages.register.txt_devianartUpload",
+        tabId: "devianartTemplate",
         title: "",
         icon: "",
-        content: "<p>Dynamic Content</p>"
+        component: DevianartTabContentComponent,
+        inputs: {
+          bUseInternalVisualizer: false
+        }
       }
     ];
   }
@@ -146,25 +154,4 @@ export class ModalRegistrarArteComponent implements OnInit {
         }
       );
   }
-}
-
-export class FileData {
-  base64!: string | null;
-  fileName!: string | null;
-  contentType!: string | null;
-}
-
-export class ArtImageRef {
-  uploadType!: string;
-  fileData!: FileData;
-  imageLink!: string;
-}
-
-export class CreatedArt {
-  artName!: string;
-  haveSchedule!: boolean;
-  startScheduleDate!: string;
-  endScheduleDate!: string;
-  userAccountType!: string;
-  artImageRef!: ArtImageRef[];
 }

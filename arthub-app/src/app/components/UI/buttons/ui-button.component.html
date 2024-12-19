@@ -1,32 +1,33 @@
-<!-- ui-button.component.html -->
 <button [ngStyle]="style" [class]="buttonClass" (click)="handleClick()">
   <img *ngIf="useIcon && iconAlign === 'left'" [src]="iconSrc" class="icon-left" alt="Ícone do botão à esquerda">
   <span [ngStyle]="textStyle">
-    <ng-content></ng-content> <!-- Conteúdo do botão -->
+    <ng-content></ng-content>
   </span>
   <img *ngIf="useIcon && iconAlign === 'right'" [src]="iconSrc" class="icon-right" alt="Ícone do botão à direita">
 </button>
 
 <div class="container-spinner">
-  <app-spinner-ios *ngIf="useSpinner"></app-spinner-ios>
+  <ui-spinner-ios *ngIf="useSpinner"></ui-spinner-ios>
 </div>
 
-<!-- Modal -->
-<p-dialog [(visible)]="showModal" [modal]="true" (onHide)="closeModal()" *ngIf="useModal">
+<p-dialog [(visible)]="showModal" [modal]="true" [closeOnEscape]="false" (onHide)="closeModal()" *ngIf="useModal">
   <ng-template pTemplate="headless">
     <div class="modal-container">
-      <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 20px;">
-        <h1>{{ titleModal }}</h1>
-        <h1 style="cursor: pointer;" (click)="closeModal()">x</h1>
+      <div class="modal-header">
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+          <h1>{{ titleModal }}</h1>
+          <h1 style="cursor: pointer;" (click)="closeModal()">✖</h1>
+        </div>
+        <hr />
       </div>
-      <hr />
-      <div style="margin-top: 20px;">
-        <!-- Projeção do conteúdo do modal -->
+      <div class="modal-content">
         <ng-content select="[modalContent]"></ng-content>
       </div>
-      <p-footer *ngIf="useFooter">
-        <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
-      </p-footer>
+      <div class="modal-footer" *ngIf="useFooter">
+        <p-footer>
+          <button pButton type="button" label="Fechar" (click)="closeModal()"></button>
+        </p-footer>
+      </div>
     </div>
   </ng-template>
 </p-dialog>

@@ -2,7 +2,7 @@
   <h2>{{ 'pages.home.component_quick_access.title' | translate }}</h2>
   <div *ngIf="!loading" class="painel">
     <a *ngFor="let card of cards" [href]="card.link" class="cards" style="background-image: url({{card.img}});">
-      <div *ngIf="loading"><app-spinner-ios></app-spinner-ios></div>
+      <div *ngIf="loading"><ui-spinner-ios></ui-spinner-ios></div>
       <h3>{{ card.text }}</h3>
     </a>
   </div>

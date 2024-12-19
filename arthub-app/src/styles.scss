@@ -14,6 +14,7 @@ $header-color: #0E0A28CC;
 
 $l-medium: 1300px;
 $medium: 900px;
+$medium-small: 500px;
 $small: 400px;
 
 *{
@@ -32,7 +33,6 @@ $small: 400px;
 }
 
 .p-tabview-title {
-  padding: 10px !important;
   background-color: transparent !important;
 }
 
@@ -50,6 +50,9 @@ $small: 400px;
   border-radius: 0 !important;
   background-color: $secondary-color !important;
   border-color: #6b7280 !important;
+  height: 100% !important;
+  width: max-content !important;
+  padding: 15px 30px !important;
 }
 
 .p-tabview-nav li a span.ng-star-inserted {
@@ -60,6 +63,14 @@ $small: 400px;
 .p-tabview .p-tabview-panels {
   background-color: transparent !important;
 }
+
+.primary-tabview p-avatar div {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+
+
 
 html {
   body {

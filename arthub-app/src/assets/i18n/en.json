@@ -20,6 +20,16 @@
     },
     "footer": {
       "txt_copyright": "© 2024 Victor Barberino - Arthub. All rights reserved."
+    },
+    "ui-gallery-search": {
+      "txt_searchYourReference": "Search your reference.",
+      "txt_imageNotFound": "No images found.",
+      "txt_errorOnSelectImage": "Unable to select image. Please contact support 💜",
+      "txt_select": "Select",
+      "txt_search": "Search",
+      "txt_clickOnTheImage": "Click on the image",
+      "txt_loadMore": "Load more",
+      "placeholder_searchYourImage": "Search your image..."
     }
   },
   "pages": {
@@ -84,7 +94,7 @@
       "txt_buttonSend": "Submit",
       "txt_modalConfirmEmail": "Confirm your account by accessing the link we sent to your email!",
       "txt_deviceUpload": "From the device",
-      "txt_pinterestUpload": "Pinterest"
+      "txt_devianartUpload": "DevianArt"
     }
   },
   "messages": {

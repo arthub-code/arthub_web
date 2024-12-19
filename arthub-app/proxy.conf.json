@@ -6,5 +6,21 @@
     "pathRewrite": {
       "^/translate": "/translate"
     }
+  },
+  "/pinterest": {
+    "target": "https://api.pinterest.com/v5",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/pinterest": ""
+    }
+  },
+  "/devianart": {
+    "target": "https://www.deviantart.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/devianart": ""
+    }
   }
 }

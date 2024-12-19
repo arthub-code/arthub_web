@@ -1,0 +1,13 @@
+<div class="primary-visualizer">
+	<div class="image-grid" *ngIf="images && images.length > 0">
+		<div class="image-item" *ngFor="let image of images; let i = index">
+			<div class="image-container">
+				<img [src]="image.fileData?.base64 || image.imageLink" [alt]="'Image ' + (i + 1)">
+				<button class="remove-button" (click)="removeImage(i)">✖</button>
+			</div>
+		</div>
+	</div>
+	<div class="no-images" *ngIf="!images || images.length === 0">
+		No images selected
+	</div>
+</div>

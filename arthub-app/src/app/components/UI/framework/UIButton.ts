@@ -29,6 +29,7 @@ export default class UIButton extends UIComponent implements AfterViewInit {
   @Input() useFooter: boolean = false;
   @Input() buttonClass: string = '';
   @Input() modalWidth: string = '';
+  @Input() modalHeight: string = '';
 
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
@@ -94,12 +95,18 @@ export default class UIButton extends UIComponent implements AfterViewInit {
 
             if (dialogElement) {
               this.renderer.setStyle(dialogElement, 'width', this.modalWidth + 'px');
+              if(this.modalHeight != '') {
+                this.renderer.setStyle(dialogElement, 'height', this.modalHeight + "px");
+              }
               return;
             }
           } else {
             const dialogElement = document.querySelector('.p-dialog') as HTMLElement;
             if (dialogElement) {
               this.renderer.setStyle(dialogElement, 'width', this.modalWidth + 'px');
+              if(this.modalHeight != '') {
+                this.renderer.setStyle(dialogElement, 'height', this.modalHeight + "px");
+              }
               return;
             }
           }

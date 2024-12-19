@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Directive, Input, TemplateRef, Type, ViewChild, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, Directive, Input, QueryList, TemplateRef, Type, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 import UIComponent from '../UIComponent';
 
 export interface TabPanel {
@@ -16,7 +16,9 @@ export class UITabview extends UIComponent {
   @Input() tabs: TabPanel[] = [];
   @Input() useIcons: boolean = false;
 
-  @ViewChild('dynamicContent', { read: ViewContainerRef }) dynamicContent!: ViewContainerRef;
+  //@ViewChild('dynamicContent', { read: ViewContainerRef }) dynamicContent!: ViewContainerRef;
+
+  @ViewChildren('dynamicContentContainer', { read: ViewContainerRef}) dynamicContentContainer!:QueryList<ViewContainerRef>;
 
   constructor(private resolver: ComponentFactoryResolver) { super(); }
 
@@ -25,10 +27,11 @@ export class UITabview extends UIComponent {
   }
 
   loadTabs() {
-    this.tabs.forEach(tab => {
+    this.tabs.forEach((tab, index) => {
       if (tab.component) {
+        const dynamicContent = this.dynamicContentContainer.toArray()[index];
         const factory = this.resolver.resolveComponentFactory(tab.component);
-        const componentRef = this.dynamicContent.createComponent(factory);
+        const componentRef = dynamicContent.createComponent(factory);
 
         // Verifica se 'inputs' existe no 'tab' e atribui aos inputs do componente
         if (tab.inputs) {

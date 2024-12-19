@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-spinner-ios',
+  selector: 'ui-spinner-ios',
   standalone: true,
   imports: [],
   templateUrl: './spinner-ios.component.html',

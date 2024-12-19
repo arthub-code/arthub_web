@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from "../../components/header/header.component";
-import { FooterComponent } from "../../components/footer/footer.component";
-import { PrimaryCardComponent } from "../../components/UI/cards/primary-card/primary-card.component";
-import { PrimaryInputComponent } from "../../components/UI/inputs/primary-input/primary-input.component";
 import { CommonModule } from '@angular/common';
 import LoginPayload from '../../model/LoginPayload';
 import { FormsModule } from '@angular/forms';
-import { SecondaryInputComponent } from "../../components/UI/inputs/secondary-input/secondary-input.component";
 import { TranslationService } from '../../services/translation/translation.service';
+import { DevianArtService } from '../../services/devianart/devianart.service';
+import { MEDIA_SEARCHER, GallerySearchComponent } from '../../components/UI/gallery/gallery-search/gallery-search.component';
+import { PrimaryCardComponent } from "../../components/UI/cards/primary-card/primary-card.component";
 
 @Component({
   selector: 'app-test-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, HeaderComponent, FooterComponent, PrimaryCardComponent, PrimaryInputComponent, SecondaryInputComponent],
+  imports: [CommonModule, FormsModule, GallerySearchComponent, PrimaryCardComponent],
+  providers: [
+    { provide: MEDIA_SEARCHER, useClass: DevianArtService }
+  ],
   templateUrl: './test-page.component.html',
   styleUrl: './test-page.component.scss'
 })
@@ -20,7 +21,7 @@ export class TestPageComponent implements OnInit{
   accountLoginPerson: LoginPayload = new LoginPayload();
   text: string = '';
 
-  constructor(private translate: TranslationService) {
+  constructor(private translate: TranslationService, private devianApi: DevianArtService) {
     this.accountLoginPerson.email = "";
   }
 
